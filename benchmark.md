@@ -35,7 +35,7 @@ Relevamiento: octubre 2026. Web actual: <https://eurekacrea.com.ar/>
 
 | Agencia | Hero / posicionamiento | CTA y leads | Prueba social | Destacado |
 |---|---|---|---|---|
-| [Monks](https://www.monks.com/) | "Transforming brands for the real-time world" | Let's connect | Casos en video, red global S4 | Contenido/insights de IA, video protagonista |
+| [Clica](https://clica.agency/) | "Marcas con tracción, equipos con impulso" | Comencemos / ¿Tomamos un café? | Solo partners (Meta, Google, TikTok) | Dos modelos de trabajo + línea de crédito + podcast |
 | [Way2net](https://www.way2net.com/) | Datos para transformar tu negocio | Form **con rango de presupuesto** | **Casos con métricas** (+120% tráfico), USD 95M gestionados, Clutch | FAQ extensa, SEO/GEO |
 | [WASD](https://wasd.com.ar/) | "Desbloqueamos logros" · startups/gaming | Contactanos + Ver casos | ~40 logos (Netflix, Uber) + testimonio con número | Tono de marca muy propio |
 | [Buho Media](https://www.buhomedia.com.ar/) | "Transforma tu inversión en ventas" | Solicitar asesoramiento + "Auditar mi web" | +350 empresas, logos (River, Boca) | Sección "problemas reales" + FAQ de precios |
