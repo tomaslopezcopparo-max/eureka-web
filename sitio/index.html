@@ -63,7 +63,7 @@ section{padding-block:clamp(64px,9vw,120px)}
 .hero .in{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:40px;align-items:end}
 @media (max-width:900px){.hero .in{grid-template-columns:minmax(0,1fr)}}
 .hero-t{display:grid;gap:28px}
-.hero h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--cian) 62%)}
+.hero h1 em{font-style:normal;background:linear-gradient(var(--cian),var(--cian)) no-repeat 0 100%/100% 36%}
 .hero-cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 .hero-note{font-size:14px;color:var(--tinta-3)}
 .stage{position:relative;aspect-ratio:1/1.02;max-width:100%;border-radius:24px;background:var(--azul);overflow:hidden;isolation:isolate}
@@ -227,6 +227,45 @@ footer a:hover{color:#fff}
 .wa:hover{transform:scale(1.06)}
 .wa svg{width:30px;height:30px;fill:#fff}
 
+/* motion: entrada del hero, piezas flotando, aparición al scroll y brillo del CTA.
+   Todo se apaga con prefers-reduced-motion (regla de arriba). */
+@keyframes up{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes pop{from{opacity:0;transform:translateY(48px) scale(.92)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{translate:0 0}50%{translate:0 -12px}}
+@keyframes spin{to{rotate:360deg}}
+@keyframes grow{from{transform:scaleY(.06)}to{transform:none}}
+@keyframes mark{from{background-size:0% 36%}to{background-size:100% 36%}}
+@keyframes glow{0%,100%{box-shadow:0 0 0 0 rgba(174,246,255,0)}50%{box-shadow:0 0 0 7px rgba(174,246,255,.55)}}
+@keyframes shine{0%,75%{transform:translateX(-120%) skewX(-20deg)}100%{transform:translateX(320%) skewX(-20deg)}}
+.hero h1 .ln{display:block;animation:up .9s cubic-bezier(.2,.75,.2,1) both}
+.hero h1 .ln:nth-child(2){animation-delay:.08s}
+.hero h1 .ln:nth-child(3){animation-delay:.16s}
+.hero h1 em{animation:mark .8s 1s cubic-bezier(.6,0,.2,1) both}
+.hero .eyebrow{animation:up .8s both}
+.hero .lede{animation:up .9s .3s cubic-bezier(.2,.75,.2,1) both}
+.hero-cta{animation:up .9s .42s cubic-bezier(.2,.75,.2,1) both}
+.hero-note{animation:up .9s .52s both}
+.stage{animation:pop 1s .1s cubic-bezier(.2,.75,.2,1) both}
+.stage::before{animation:spin 36s linear infinite}
+.p-story{animation:pop .9s .45s cubic-bezier(.2,.75,.2,1) both,float 7s 1.4s ease-in-out infinite}
+.p-reel{animation:pop .9s .6s cubic-bezier(.2,.75,.2,1) both,float 8s 1.6s ease-in-out infinite reverse}
+.p-ads{animation:pop .9s .75s cubic-bezier(.2,.75,.2,1) both,float 6s 1.8s ease-in-out infinite}
+.p-reel .play{animation:glow 2.4s 1.8s ease-in-out infinite}
+.bars span{transform-origin:bottom;animation:grow .7s cubic-bezier(.2,.75,.2,1) both}
+.bars span:nth-child(1){animation-delay:1s}
+.bars span:nth-child(2){animation-delay:1.07s}
+.bars span:nth-child(3){animation-delay:1.14s}
+.bars span:nth-child(4){animation-delay:1.21s}
+.bars span:nth-child(5){animation-delay:1.28s}
+.bars span:nth-child(6){animation-delay:1.35s}
+.bars span:last-child{animation:grow .7s 1.42s cubic-bezier(.2,.75,.2,1) both,glow 2.4s 2.2s ease-in-out infinite}
+.btn .arr{transition:transform .25s}
+.btn:hover .arr{transform:translateX(5px)}
+.btn-p.btn-lg{position:relative;overflow:hidden;isolation:isolate}
+.btn-p.btn-lg::after{content:"";position:absolute;inset:0 auto 0 0;width:35%;background:linear-gradient(90deg,transparent,rgba(174,246,255,.45),transparent);transform:translateX(-120%) skewX(-20deg);animation:shine 5s 2s ease-in-out infinite;z-index:-1}
+.rv{transition:opacity .8s cubic-bezier(.2,.75,.2,1),transform .8s cubic-bezier(.2,.75,.2,1);transition-delay:var(--d,0s)}
+.rv.pre{opacity:.2;transform:translateY(36px)}
+
 /* marcadores de contenido pendiente (sacar antes de publicar) */
 .todo{display:inline-block;font-size:12px;font-weight:500;letter-spacing:0;line-height:1.3;color:#8a5a00;background:#fff1cc;border:1px dashed #c58a00;border-radius:6px;padding:3px 8px;vertical-align:middle}
 </style>
@@ -251,7 +290,7 @@ footer a:hover{color:#fff}
   <div class="in">
     <div class="hero-t">
       <span class="eyebrow">Agencia de marketing · Rosario</span>
-      <h1>Contenido y anuncios que <em>venden</em>.</h1>
+      <h1><span class="ln">Contenido</span> <span class="ln">y anuncios</span> <span class="ln">que <em>venden</em>.</span></h1>
       <p class="lede">Diseño, redes y Meta Ads con un solo equipo. Hablás directo con quienes hacen el trabajo y cada mes ves qué funcionó y qué no.</p>
       <div class="hero-cta">
         <a class="btn btn-p btn-lg" href="#contacto">Pedí tu diagnóstico gratis <span class="arr">→</span></a>
@@ -323,6 +362,7 @@ footer a:hover{color:#fff}
     <div class="head split"><div class="head"><span class="eyebrow">Casos</span><h2>Resultados, con números.</h2></div><p class="lede">Lo que hicimos y lo que pasó. Sin promesas.</p></div>
     <div class="cases">
       <article class="case">
+        <!-- Para que el número cuente al aparecer: <div class="metric" data-count="40" data-prefix="−" data-suffix="%">−40%</div> -->
         <div class="case-top"><small>Créditos · Rosario</small><div><div class="metric">—</div><span class="todo">Completar: consultas/mes o costo por lead</span></div></div>
         <div class="case-b"><h3>Tu Préstamo Genial</h3><dl><div><dt>Desafío</dt><dd>Generar consultas de crédito en Meta, una categoría especial con segmentación limitada.</dd></div><div><dt>Qué hicimos</dt><dd>Sistema visual, reels mensuales, landing propia y campañas de leads y retargeting.</dd></div></dl><div class="tags"><span class="chip">Diseño</span><span class="chip">Contenido</span><span class="chip">Anuncios</span></div></div>
       </article>
@@ -459,6 +499,24 @@ footer a:hover{color:#fff}
 <a class="wa" href="https://wa.me/5493415014376?text=Hola%20Eureka!%20Quiero%20el%20diagn%C3%B3stico%20gratis." target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.6a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></a>
 
 <script>
+// Motion: aparición al scroll (solo para lo que arranca fuera de pantalla) y contadores de casos
+(()=>{
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches||!("IntersectionObserver" in window))return;
+  const els=[...document.querySelectorAll("section > .in > .head, .duo, .team-t, .contact-l, #lead")];
+  document.querySelectorAll(".pains,.services,.cases,.work,.steps,.plans,.quotes,.faq").forEach(g=>
+    [...g.children].forEach((c,i)=>{c.style.setProperty("--d",(i*.09)+"s");els.push(c)}));
+  const count=el=>{
+    const to=parseFloat(el.dataset.count),pre=el.dataset.prefix||"",suf=el.dataset.suffix||"",t0=performance.now();
+    const tick=t=>{const k=Math.min(1,(t-t0)/1400),v=to*(1-Math.pow(1-k,3));
+      el.textContent=pre+(Number.isInteger(to)?Math.round(v):v.toFixed(1))+suf;if(k<1)requestAnimationFrame(tick)};
+    requestAnimationFrame(tick)};
+  const io=new IntersectionObserver(es=>es.forEach(e=>{
+    if(!e.isIntersecting)return;
+    e.target.classList.remove("pre");io.unobserve(e.target);
+    e.target.querySelectorAll("[data-count]").forEach(count)}),{rootMargin:"0px 0px -8% 0px"});
+  els.forEach(el=>{if(el.getBoundingClientRect().top<innerHeight)return;el.classList.add("rv","pre");io.observe(el)});
+})();
+
 document.getElementById("lead").addEventListener("submit",e=>{
   e.preventDefault();
   const f=e.target, ok=document.getElementById("ok");
