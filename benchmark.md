@@ -16,7 +16,7 @@ Relevamiento: octubre 2026. Web actual: <https://eurekacrea.com.ar/>
 
 ## 2. Competidores analizados
 
-### Rosario (10)
+### Rosario (12)
 
 | Agencia | Hero / posicionamiento | CTA y leads | Prueba social | Destacado |
 |---|---|---|---|---|
@@ -29,6 +29,8 @@ Relevamiento: octubre 2026. Web actual: <https://eurekacrea.com.ar/>
 | [Proyecto Beta](https://proyectobeta.online/) | "Somos el equipo de marketing de tu negocio" | **Agendar reunión (HubSpot)** | Testimonios, casos en video, Google Partner | Blog SEO local ("agencia en Rosario") |
 | [Clientum](https://clientum.ar/) | "La agencia para empresas que quieren volar" | Form + WhatsApp + newsletter | Google 5.0, 5 testimonios | Landings por servicio y rubro |
 | [Spotcontenidos](https://www.spotcontenidos.com/) | "Aumentá tus ventas" (Google Ads + SEO) | Contáctanos, WhatsApp | Solo certificaciones | Página por servicio |
+| [Escalamos](https://escalamos.io/) | "Construimos el departamento de marketing y tecnología de tu empresa en Rosario" | **"Obtener mi auditoría"** + WhatsApp + form | **Casos con números** (x4 ventas), Google 5.0 (+115) | Método Fast Track en 5 pasos |
+| [Instabiz](https://instabiz.com.ar/) | "Escalamos tus ventas en 90 días" (ecommerce moda) | WhatsApp + clases gratis | Casos con facturación, testimonios en video | Lead magnet: clases y guías gratis |
 | [El Cielo Digital](https://elcielo.digital/) | Agencia para **PyMEs** | **"Quiero multiplicar mis ventas"** + WhatsApp + form | Testimonios, logos, Google/Meta Partner | Transparencia: "sin tarifas ocultas, reporte mensual" |
 
 ### Buenos Aires (5 grandes)
@@ -39,7 +41,7 @@ Relevamiento: octubre 2026. Web actual: <https://eurekacrea.com.ar/>
 | [Way2net](https://www.way2net.com/) | Datos para transformar tu negocio | Form **con rango de presupuesto** | **Casos con métricas** (+120% tráfico), USD 95M gestionados, Clutch | FAQ extensa, SEO/GEO |
 | [WASD](https://wasd.com.ar/) | "Desbloqueamos logros" · startups/gaming | Contactanos + Ver casos | ~40 logos (Netflix, Uber) + testimonio con número | Tono de marca muy propio |
 | [Buho Media](https://www.buhomedia.com.ar/) | "Transforma tu inversión en ventas" | Solicitar asesoramiento + "Auditar mi web" | +350 empresas, logos (River, Boca) | Sección "problemas reales" + FAQ de precios |
-| [Pragmativa](https://pragmativa.com/) | "Primera agencia digital B2B" | Form + WhatsApp, "Consultar planes" | +150 clientes, testimonios, logos | Proceso "de la idea a la primera reunión" |
+| [Ukelele](https://ukelele.la/) | "El lugar donde las marcas líderes crean su estrategia de growth" | Hablemos → form (pide facturación) | +30 logos (Adidas, Vans) + **casos con métricas** (−37% CAC) | Framework propio, equipo visible |
 
 ## 3. Síntesis
 
@@ -50,15 +52,16 @@ Relevamiento: octubre 2026. Web actual: <https://eurekacrea.com.ar/>
 - Página por servicio.
 
 **Huecos que nadie cubre bien (oportunidad para Eureka)**
-1. **Casos con números reales**: casi nadie muestra resultados (CPL, ventas, alcance). Solo Way2net.
+1. **Casos con números reales**: solo 4 de 17 muestran resultados (Escalamos, Instabiz, Ukelele, Way2net). Escalamos ya lo hace en Rosario: es el estándar a alcanzar.
 2. **Precios o "desde"**: ninguno publica rangos. Mostrar planes orientativos diferencia y filtra.
 3. **Mostrar el trabajo**: siendo una agencia de contenido, casi nadie muestra reels/piezas en la home. Eureka puede.
 4. **Velocidad y cercanía**: "respondemos en menos de 2 h por WhatsApp", los socios a la vista.
 5. Muchos sitios tienen errores (contadores en "+0", duplicados, faltas). Una web prolija ya es diferencial.
 
 **Top 5 para copiar/adaptar**
-1. CTA de baja fricción: "Agendá un diagnóstico gratis" (HUMAN, Proyecto Beta).
-2. Casos con métrica antes/después (Way2net).
+1. CTA de baja fricción: "Agendá un diagnóstico gratis" (Escalamos, HUMAN).
+2. Casos con métrica antes/después (Escalamos, Ukelele, Way2net).
+6. Lead magnet con clases o guías gratis (Instabiz).
 3. Sección "¿Te pasa esto?" con dolores del cliente (Buho Media).
 4. Formulario con rango de inversión para calificar leads (Way2net).
 5. Bloque de transparencia: contrato, reporte mensual, sin permanencia (El Cielo).
