@@ -1,5 +1,18 @@
-<title>Eureka Agencia</title>
-<meta name="description" content="Agencia de marketing en Rosario: diseño, contenido en redes y anuncios en Meta con un solo equipo.">
+<title>Agencia de marketing en Rosario · Eureka</title>
+<meta name="description" content="Agencia de marketing en Rosario: diseño para redes, contenido para Instagram y anuncios en Meta (Facebook e Instagram) con un solo equipo. Pedí tu diagnóstico gratis.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"ProfessionalService","name":"Eureka","description":"Agencia de marketing en Rosario: diseño, contenido en redes y anuncios en Meta.","telephone":"+54 341 501 4376","email":"contacto@eurekacrea.com.ar","url":"https://eurekacrea.com.ar/","address":{"@type":"PostalAddress","addressLocality":"Rosario","addressRegion":"Santa Fe","addressCountry":"AR"},"areaServed":["Rosario","Gran Rosario"],"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Diseño para redes sociales"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Contenido en redes y edición de reels"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Anuncios en Meta (Facebook e Instagram)"}}]},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"¿Cuánto cuesta?","acceptedAnswer":{"@type":"Answer","text":"Trabajamos con un honorario mensual según los servicios que elijas. La inversión en anuncios va aparte, a nombre de tu empresa. En el diagnóstico te pasamos un número concreto."}},
+  {"@type":"Question","name":"¿En cuánto tiempo veo resultados?","acceptedAnswer":{"@type":"Answer","text":"El primer mes armamos la base: estrategia, diseño, píxel y landing. Las campañas arrancan apenas está todo listo y cada mes te mostramos resultados en una reunión."}},
+  {"@type":"Question","name":"¿Qué necesito aportar?","acceptedAnswer":{"@type":"Answer","text":"Accesos de administrador a tus cuentas, información comercial y una persona que apruebe en 48 horas hábiles. Del resto nos ocupamos nosotros."}},
+  {"@type":"Question","name":"¿Puedo contratar un solo servicio?","acceptedAnswer":{"@type":"Answer","text":"Sí. Podés empezar solo con anuncios o solo con contenido y sumar después."}},
+  {"@type":"Question","name":"¿Con qué rubros trabajan?","acceptedAnswer":{"@type":"Answer","text":"Con pymes y marcas de Rosario y Gran Rosario. Tenemos experiencia en automotor (concesionarias y talleres), financieras y servicios."}},
+  {"@type":"Question","name":"¿Hacen páginas web?","acceptedAnswer":{"@type":"Answer","text":"Las campañas incluyen una landing exclusiva para anuncios. Si necesitás una web institucional, también la hacemos: la cotizamos aparte."}}
+ ]}
+]}
+</script>
 <meta name="claude:viewport-fit-sides" content="cover">
 <style>
 @font-face{font-family:"Open Sauce Sans";src:url("fonts/OpenSauceSans-300.woff2") format("woff2");font-weight:300;font-display:swap}
@@ -19,7 +32,6 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 body{margin:0;background:var(--fondo);color:var(--tinta);font:400 17px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--fondo)}
 a{color:inherit}
@@ -87,9 +99,19 @@ section{padding-block:clamp(64px,9vw,120px)}
 .bars span:last-child{background:var(--cian);outline:1.5px solid var(--azul)}
 
 /* franja cian */
-.band{background:var(--cian);color:var(--azul)}
-.band a{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:22px;text-decoration:none;font-size:clamp(20px,2.4vw,30px);letter-spacing:-.04em}
-.band a:hover .arr{transform:translateX(6px)}
+/* franja cian en movimiento (marquesina); frena al pasar el mouse */
+.band{background:var(--cian);color:var(--azul);overflow:hidden}
+.band a{display:block;padding-block:22px;text-decoration:none}
+.band a:focus-visible{outline-offset:-4px}
+.track{display:flex;width:max-content;animation:marquee 32s linear infinite}
+.band.rev .track{animation-direction:reverse}
+.band a:hover .track,.band a:focus-visible .track{animation-play-state:paused}
+.track span{display:flex;align-items:center;gap:40px;padding-right:40px;white-space:nowrap;font-size:clamp(22px,2.6vw,34px);letter-spacing:-.045em}
+.track i{font-style:normal;width:12px;height:12px;border-radius:50%;background:var(--azul);flex:none}
+.track b{font-weight:400;background:var(--azul);color:var(--cian);border-radius:999px;padding:4px 18px}
+@keyframes marquee{to{transform:translateX(-50%)}}
+.more{display:inline-flex;gap:8px;font-weight:500;font-size:15px;text-decoration:none;color:var(--azul-2)}
+.more:hover .arr{transform:translateX(5px)}
 .arr{transition:transform .2s;display:inline-block}
 
 /* clientes */
@@ -227,8 +249,7 @@ footer a:hover{color:#fff}
 .wa:hover{transform:scale(1.06)}
 .wa svg{width:30px;height:30px;fill:#fff}
 
-/* motion: entrada del hero, piezas flotando, aparición al scroll y brillo del CTA.
-   Todo se apaga con prefers-reduced-motion (regla de arriba). */
+/* motion: entrada del hero, piezas flotando, aparición al scroll y brillo del CTA. Siempre activo. */
 @keyframes up{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
 @keyframes pop{from{opacity:0;transform:translateY(48px) scale(.92)}to{opacity:1;transform:none}}
 @keyframes float{0%,100%{translate:0 0}50%{translate:0 -12px}}
@@ -240,6 +261,7 @@ footer a:hover{color:#fff}
 .hero h1 .ln{display:block;animation:up .9s cubic-bezier(.2,.75,.2,1) both}
 .hero h1 .ln:nth-child(2){animation-delay:.08s}
 .hero h1 .ln:nth-child(3){animation-delay:.16s}
+.hero h1 .sub{font-size:.4em;letter-spacing:-.045em;margin-top:.3em;color:var(--tinta-2);animation-delay:.24s}
 .hero h1 em{animation:mark .8s 1s cubic-bezier(.6,0,.2,1) both}
 .hero .eyebrow{animation:up .8s both}
 .hero .lede{animation:up .9s .3s cubic-bezier(.2,.75,.2,1) both}
@@ -289,8 +311,8 @@ footer a:hover{color:#fff}
 <section class="hero">
   <div class="in">
     <div class="hero-t">
-      <span class="eyebrow">Agencia de marketing · Rosario</span>
-      <h1><span class="ln">Contenido</span> <span class="ln">y anuncios</span> <span class="ln">que <em>venden</em>.</span></h1>
+      <span class="eyebrow">Agencia de marketing en Rosario</span>
+      <h1><span class="ln">Contenido</span> <span class="ln">y anuncios</span> <span class="ln">que <em>venden</em>,</span> <span class="ln sub">para marcas de Rosario.</span></h1>
       <p class="lede">Diseño, redes y Meta Ads con un solo equipo. Hablás directo con quienes hacen el trabajo y cada mes ves qué funcionó y qué no.</p>
       <div class="hero-cta">
         <a class="btn btn-p btn-lg" href="#contacto">Pedí tu diagnóstico gratis <span class="arr">→</span></a>
@@ -332,7 +354,7 @@ footer a:hover{color:#fff}
   </div>
 </section>
 
-<div class="band"><div class="in"><a href="#contacto">Te decimos en 30 minutos qué mejorar en tus redes y anuncios <span class="arr">→</span></a></div></div>
+<div class="band"><a href="#contacto" aria-label="Pedí tu diagnóstico gratis"><div class="track" aria-hidden="true"><span><b>Diagnóstico gratis →</b> Te decimos en 30 minutos qué mejorar <i></i> Diseño <i></i> Contenido en redes <i></i> Meta Ads <i></i> Rosario <i></i></span><span><b>Diagnóstico gratis →</b> Te decimos en 30 minutos qué mejorar <i></i> Diseño <i></i> Contenido en redes <i></i> Meta Ads <i></i> Rosario <i></i></span></div></a></div>
 
 <section id="servicios">
   <div class="in">
@@ -340,17 +362,17 @@ footer a:hover{color:#fff}
     <div class="services">
       <article class="svc">
         <span class="n">01</span>
-        <div class="d"><h3>Diseño</h3><p>Sistema visual y piezas digitales para que tu marca se vea igual de bien en cada lugar.</p></div>
+        <div class="d"><h3>Diseño</h3><p>Sistema visual y piezas digitales para que tu marca se vea igual de bien en cada lugar.</p><a class="more" href="#planes">Ver planes <span class="arr">→</span></a></div>
         <ul><li>Manual de uso digital<span>Mes 1</span></li><li>Placas para stories y WhatsApp<span>hasta 25 / mes</span></li><li>Placas para feed<span>hasta 10 / mes</span></li><li>Creativos para campañas<span>según campaña</span></li><li>Kit comercial digital<span>Mes 1</span></li></ul>
       </article>
       <article class="svc">
         <span class="n">02</span>
-        <div class="d"><h3>Contenido en redes</h3><p>Ideas, guiones y producción para comunicar de forma clara, cercana y actual.</p></div>
+        <div class="d"><h3>Contenido en redes</h3><p>Ideas, guiones y producción de reels para comunicar de forma clara, cercana y actual. Community manager incluido.</p><a class="more" href="#casos">Ver caso Renault Taller <span class="arr">→</span></a></div>
         <ul><li>Estrategia y calendario<span>mensual</span></li><li>Guiones de reels<span>4 / mes</span></li><li>Edición de reels y videos<span>4 / mes</span></li><li>Primera sesión de fotos<span>bonificada</span></li><li>Revisión de rendimiento<span>mensual</span></li></ul>
       </article>
       <article class="svc">
         <span class="n">03</span>
-        <div class="d"><h3>Anuncios en Meta</h3><p>Campañas en Instagram y Facebook que se corrigen con datos, no con opiniones.</p></div>
+        <div class="d"><h3>Anuncios en Meta</h3><p>Campañas en Instagram y Facebook que se corrigen con datos, no con opiniones.</p><a class="more" href="#casos">Ver caso Tu Préstamo Genial <span class="arr">→</span></a></div>
         <ul><li>Auditoría, píxel y API de conversiones<span>Mes 1</span></li><li>Landing exclusiva para anuncios<span>Mes 1</span></li><li>Campañas de leads y retargeting<span>continuo</span></li><li>Testeo de creativos<span>6–8 / mes</span></li><li>Reporte y reunión de resultados<span>mensual</span></li></ul>
       </article>
     </div>
@@ -390,7 +412,7 @@ footer a:hover{color:#fff}
   </div>
 </section>
 
-<div class="band"><div class="in"><a href="#planes">Mirá cuánto cuesta trabajar con nosotros <span class="arr">→</span></a></div></div>
+<div class="band rev"><a href="#planes" aria-label="Mirá cuánto cuesta trabajar con nosotros"><div class="track" aria-hidden="true"><span><b>Ver precios →</b> Precios claros desde el primer día <i></i> Sin tarifas ocultas <i></i> Reporte mensual <i></i> Pauta a tu nombre <i></i></span><span><b>Ver precios →</b> Precios claros desde el primer día <i></i> Sin tarifas ocultas <i></i> Reporte mensual <i></i> Pauta a tu nombre <i></i></span></div></a></div>
 
 <section>
   <div class="in">
@@ -454,6 +476,7 @@ footer a:hover{color:#fff}
       <details><summary>¿En cuánto tiempo veo resultados?</summary><p>El primer mes armamos la base: estrategia, diseño, píxel y landing. Las campañas arrancan apenas está todo listo y cada mes te mostramos resultados en una reunión.</p></details>
       <details><summary>¿Qué necesito aportar?</summary><p>Accesos de administrador a tus cuentas, información comercial y una persona que apruebe en 48 horas hábiles. Del resto nos ocupamos nosotros.</p></details>
       <details><summary>¿Puedo contratar un solo servicio?</summary><p>Sí. Podés empezar solo con anuncios o solo con contenido y sumar después.</p></details>
+      <details><summary>¿Con qué rubros trabajan?</summary><p>Con pymes y marcas de Rosario y Gran Rosario. Tenemos experiencia en automotor (concesionarias y talleres), financieras y servicios.</p></details>
       <details><summary>¿Hacen páginas web?</summary><p>Las campañas incluyen una landing exclusiva para anuncios. Si necesitás una web institucional, también la hacemos: la cotizamos aparte.</p></details>
     </div>
   </div>
@@ -481,6 +504,7 @@ footer a:hover{color:#fff}
         <div class="f"><label for="f-busca">¿Qué buscás?</label><select id="f-busca" name="busca"><option>Anuncios en Meta</option><option>Contenido en redes</option><option>Diseño</option><option>Todo junto</option><option>No sé, quiero el diagnóstico</option></select></div>
         <div class="f"><label for="f-inv">Inversión mensual en anuncios</label><select id="f-inv" name="inv"><option>Todavía no invierto</option><option>Menos de $300.000</option><option>$300.000 a $1.000.000</option><option>Más de $1.000.000</option></select></div>
       </div>
+      <div class="f"><label for="f-origen">¿Cómo nos encontraste?</label><select id="f-origen" name="origen"><option>Google</option><option>Instagram</option><option>Recomendación</option><option>Anuncio</option><option>Otro</option></select></div>
       <button class="btn btn-p btn-lg" type="submit">Quiero mi diagnóstico <span class="arr">→</span></button>
       <p class="ok" id="ok" hidden></p>
     </form>
@@ -491,7 +515,7 @@ footer a:hover{color:#fff}
 
 <footer>
   <div class="in">
-    <div><span class="logo">eureka</span><p>Diseño, contenido y anuncios. Rosario, Argentina.</p></div>
+    <div><span class="logo">eureka</span><p>Agencia de marketing en Rosario y Gran Rosario.<br>+54 341 501 4376 · contacto@eurekacrea.com.ar</p></div>
     <nav aria-label="Pie"><a href="#servicios">Servicios</a><a href="#casos">Casos</a><a href="#planes">Planes</a><a href="#contacto">Contacto</a><a href="https://instagram.com/" rel="noopener" target="_blank">Instagram <span class="todo">URL</span></a></nav>
   </div>
 </footer>
@@ -501,7 +525,7 @@ footer a:hover{color:#fff}
 <script>
 // Motion: aparición al scroll (solo para lo que arranca fuera de pantalla) y contadores de casos
 (()=>{
-  if(matchMedia("(prefers-reduced-motion: reduce)").matches||!("IntersectionObserver" in window))return;
+  if(!("IntersectionObserver" in window))return;
   const els=[...document.querySelectorAll("section > .in > .head, .duo, .team-t, .contact-l, #lead")];
   document.querySelectorAll(".pains,.services,.cases,.work,.steps,.plans,.quotes,.faq").forEach(g=>
     [...g.children].forEach((c,i)=>{c.style.setProperty("--d",(i*.09)+"s");els.push(c)}));
@@ -523,7 +547,7 @@ document.getElementById("lead").addEventListener("submit",e=>{
   const req=["nombre","wa","negocio"].filter(n=>!f[n].value.trim());
   ok.hidden=false;
   if(req.length){ok.textContent="Completá nombre, WhatsApp y negocio para seguir.";f[req[0]].focus();return}
-  const msg=`Hola Eureka! Soy ${f.nombre.value.trim()} (${f.negocio.value.trim()}). Busco: ${f.busca.value}. Inversión en anuncios: ${f.inv.value}. Mi WhatsApp: ${f.wa.value.trim()}.`;
+  const msg=`Hola Eureka! Soy ${f.nombre.value.trim()} (${f.negocio.value.trim()}). Busco: ${f.busca.value}. Inversión en anuncios: ${f.inv.value}. Los encontré por: ${f.origen.value}. Mi WhatsApp: ${f.wa.value.trim()}.`;
   const url="https://wa.me/5493415014376?text="+encodeURIComponent(msg);
   ok.innerHTML=`Listo. <a href="${url}" target="_blank" rel="noopener">Abrí WhatsApp para enviarnos tu consulta →</a>`;
 });
