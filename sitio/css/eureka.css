@@ -159,7 +159,8 @@ section{padding-block:clamp(64px,9vw,120px)}
 /* planes */
 .plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:stretch}
 @media (max-width:960px){.plans{grid-template-columns:minmax(0,1fr)}}
-.plan{background:var(--blanco);border-radius:var(--r);padding:28px;display:grid;gap:18px;grid-template-rows:auto auto 1fr auto;border:1.5px solid transparent}
+.plan{background:var(--blanco);border-radius:var(--r);padding:28px;display:flex;flex-direction:column;gap:18px;border:1.5px solid transparent}
+.plan > .btn{margin-top:auto;justify-content:center}
 .plan.hot{border-color:var(--azul);position:relative}
 .plan.hot::before{content:"El más elegido";position:absolute;top:-12px;left:24px;background:var(--cian);color:var(--azul);font-size:12px;font-weight:500;border-radius:var(--pill);padding:3px 12px}
 .price{font-size:40px;letter-spacing:-.06em;line-height:1}
@@ -312,7 +313,6 @@ footer a:hover{color:#fff}
 .rel{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 @media (max-width:860px){.rel{grid-template-columns:minmax(0,1fr)}}
 .rel .case{grid-template-rows:auto 1fr}
-.rel .plan{grid-template-rows:auto auto auto 1fr auto}
 .cta-block{background:var(--azul);color:#fff;border-radius:24px;padding:clamp(28px,5vw,64px);display:grid;grid-template-columns:minmax(0,1.4fr) auto;gap:24px 40px;align-items:center;position:relative;overflow:hidden;isolation:isolate}
 .cta-block::before{content:"";position:absolute;width:520px;aspect-ratio:1;right:-180px;bottom:-280px;border-radius:50%;background:radial-gradient(circle at 30% 30%,var(--cian-brillo),var(--violeta) 70%);opacity:.5;z-index:-1}
 .cta-block h2{color:#fff}
