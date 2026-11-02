@@ -15,6 +15,7 @@
   color-scheme:light;
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--fondo);color:var(--tinta);font:400 17px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--fondo)}
@@ -344,3 +345,63 @@ footer a:hover{color:#fff}
 .yes{display:inline-block;width:14px;height:14px;border-radius:50%;background:var(--azul)}
 .no{display:inline-block;width:14px;height:2px;background:var(--linea);vertical-align:middle}
 .cmp td small{color:var(--tinta-3);font-size:13px}
+
+/* ---- ronda 3 (taste-library): pestañas, acordeón de casos, grilla mixta, sección oscura, microdetalles ---- */
+
+/* pestañas de servicios (Runway). Sin JS se ven los tres paneles. */
+.tabs{display:flex;gap:6px;flex-wrap:wrap;background:var(--blanco);border-radius:var(--pill);padding:6px;width:max-content;max-width:100%;margin-bottom:16px}
+.tab{font:500 16px/1 var(--sans);color:var(--tinta-2);background:transparent;border:0;border-radius:var(--pill);padding:12px 20px;cursor:pointer;transition:background .2s,color .2s}
+.tab:hover{color:var(--azul)}
+.tab[aria-selected="true"]{background:var(--azul);color:#fff}
+.tab:focus-visible{outline:2px solid var(--azul-2);outline-offset:2px}
+.svc[role="tabpanel"]{animation:up .5s cubic-bezier(.2,.75,.2,1) both}
+@media (max-width:520px){.tabs{width:100%}.tab{flex:1 1 auto;padding:12px 10px;font-size:14px}}
+
+/* casos en acordeón (Stripe) */
+.acc{display:grid;gap:12px}
+.acc-i{background:var(--blanco);border-radius:var(--r);overflow:hidden;transition:box-shadow .25s}
+.acc-i summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:48px minmax(0,1fr) auto 28px;gap:16px;align-items:center;padding:22px clamp(18px,3vw,32px)}
+.acc-i summary::-webkit-details-marker{display:none}
+.acc-i summary:focus-visible{outline:2px solid var(--azul-2);outline-offset:-4px}
+.acc-n{font-size:13px;font-weight:700;letter-spacing:.1em;color:var(--tinta-3)}
+.acc-t{display:grid;gap:2px;min-width:0}
+.acc-t b{font-weight:400;font-size:clamp(22px,2.4vw,30px);letter-spacing:-.045em;line-height:1.05}
+.acc-t small{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--tinta-3)}
+.acc-x{width:28px;height:28px;border-radius:50%;background:var(--fondo);position:relative;transition:background .2s,transform .3s}
+.acc-x::before,.acc-x::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--azul);transform:translate(-50%,-50%)}
+.acc-x::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .3s}
+.acc-i[open] .acc-x{background:var(--cian)}
+.acc-i[open] .acc-x::after{transform:translate(-50%,-50%) rotate(0deg)}
+.acc-b{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:16px;padding:0 clamp(18px,3vw,32px) clamp(18px,3vw,32px);animation:up .45s cubic-bezier(.2,.75,.2,1) both}
+.acc-b .case-top{border-radius:var(--r-s)}
+.acc-b dl{margin:0;display:grid;gap:16px;align-content:center}
+.acc-b dt{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--tinta-3);font-weight:500}
+.acc-b dd{margin:4px 0 0;color:var(--tinta-2)}
+@media (max-width:760px){.acc-i summary{grid-template-columns:36px minmax(0,1fr) 28px}.acc-i summary .tags{display:none}.acc-b{grid-template-columns:minmax(0,1fr)}}
+
+/* grilla de trabajo con formatos mezclados (Pinterest) */
+.work{display:block;columns:4;column-gap:12px}
+.work .tile{break-inside:avoid;margin-bottom:12px;width:100%;flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:2px}
+.tile.t-r{aspect-ratio:9/16}
+.tile.t-s{aspect-ratio:1/1}
+.tile.t-p{aspect-ratio:4/5}
+.tile small{font-size:11px;letter-spacing:.14em;opacity:.7}
+@media (max-width:900px){.work{columns:3}}
+@media (max-width:560px){.work{columns:2}}
+
+/* sección oscura para cortar el ritmo (Luma, Runway) */
+section.dark{background:var(--violeta);color:#fff;position:relative;overflow:hidden;isolation:isolate}
+section.dark::before{content:"";position:absolute;width:640px;aspect-ratio:1;left:-260px;bottom:-360px;border-radius:50%;background:radial-gradient(circle at 60% 40%,var(--azul-2),var(--violeta) 70%);opacity:.8;z-index:-1}
+section.dark h2,section.dark h3{color:#fff}
+section.dark .eyebrow,section.dark .step .k{color:var(--cian)}
+section.dark .step p{color:rgba(255,255,255,.72)}
+section.dark .steps{border-top-color:var(--cian)}
+
+/* microdetalles (Stripe, Linear) */
+.nav a{position:relative;display:inline-flex;align-items:center;gap:4px}
+.nav a::after{content:"→";font-size:13px;opacity:0;transform:translateX(-4px);transition:opacity .2s,transform .2s}
+.nav a:hover::after{opacity:1;transform:none}
+.nav a[aria-current="page"]::after{display:none}
+.pain,.plan,.quote,.acc-i,.work .tile,.box,.case{transition:transform .3s cubic-bezier(.2,.75,.2,1),box-shadow .3s}
+.pain:hover,.plan:hover,.quote:hover,.work .tile:hover,.rel .case:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(4,41,138,.12)}
+.acc-i:hover{box-shadow:0 12px 30px rgba(4,41,138,.08)}

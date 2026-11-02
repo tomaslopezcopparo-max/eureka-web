@@ -87,22 +87,27 @@
 <section id="servicios">
   <div class="in">
     <div class="head split"><div class="head"><span class="eyebrow">Servicios</span><h2>Tres frentes, un solo equipo.</h2></div><p class="lede">Podés contratar uno o los tres. Juntos rinden más: el diseño alimenta el contenido y el contenido alimenta los anuncios.</p></div>
-    <div class="services">
-      <article class="svc">
+    <div class="tabs" role="tablist" aria-label="Servicios">
+      <button class="tab" role="tab" id="tab-diseno" aria-controls="panel-diseno" aria-selected="true">Diseño</button>
+      <button class="tab" role="tab" id="tab-contenido" aria-controls="panel-contenido" aria-selected="false" tabindex="-1">Contenido en redes</button>
+      <button class="tab" role="tab" id="tab-anuncios" aria-controls="panel-anuncios" aria-selected="false" tabindex="-1">Anuncios en Meta</button>
+    </div>
+    <div class="services" data-tabs>
+    <article class="svc" role="tabpanel" id="panel-diseno" aria-labelledby="tab-diseno">
         <span class="n">01</span>
         <div class="d"><h3>Diseño</h3><p>Sistema visual y piezas digitales para que tu marca se vea igual de bien en cada lugar.</p><a class="more" href="servicios/diseno.html">Ver servicio de diseño <span class="arr">→</span></a></div>
         <ul><li>Manual de uso digital<span>Mes 1</span></li><li>Placas para stories y WhatsApp<span>según calendario</span></li><li>Placas para feed<span>según calendario</span></li><li>Creativos para campañas<span>según campaña</span></li><li>Kit comercial digital<span>Mes 1</span></li></ul>
-      </article>
-      <article class="svc">
+    </article>
+    <article class="svc" role="tabpanel" id="panel-contenido" aria-labelledby="tab-contenido">
         <span class="n">02</span>
         <div class="d"><h3>Contenido en redes</h3><p>Ideas, guiones y producción de reels para comunicar de forma clara, cercana y actual.</p><a class="more" href="servicios/contenido.html">Ver servicio de contenido <span class="arr">→</span></a></div>
         <ul><li>Estrategia y calendario<span>mensual</span></li><li>Guiones de reels<span>según calendario</span></li><li>Edición de reels y videos<span>según calendario</span></li><li>Primera sesión de fotos<span>bonificada</span></li><li>Revisión de rendimiento<span>mensual</span></li></ul>
-      </article>
-      <article class="svc">
+    </article>
+    <article class="svc" role="tabpanel" id="panel-anuncios" aria-labelledby="tab-anuncios">
         <span class="n">03</span>
         <div class="d"><h3>Anuncios en Meta</h3><p>Campañas en Instagram y Facebook que se corrigen con datos, no con opiniones.</p><a class="more" href="servicios/anuncios.html">Ver servicio de anuncios <span class="arr">→</span></a></div>
         <ul><li>Auditoría, píxel y API de conversiones<span>Mes 1</span></li><li>Landing exclusiva para anuncios<span>Mes 1</span></li><li>Campañas de leads y retargeting<span>continuo</span></li><li>Testeo de creativos<span>continuo</span></li><li>Reporte y reunión de resultados<span>mensual</span></li></ul>
-      </article>
+    </article>
     </div>
   </div>
 </section>
@@ -110,20 +115,29 @@
 <section id="casos" style="padding-top:0">
   <div class="in">
     <div class="head split"><div class="head"><span class="eyebrow">Casos</span><h2>Resultados, con números.</h2></div><p class="lede">Lo que hicimos y lo que pasó. Sin promesas.</p></div>
-    <div class="cases">
-      <article class="case">
-        <!-- Para que el número cuente al aparecer: <div class="metric" data-count="40" data-prefix="−" data-suffix="%">−40%</div> -->
-        <div class="case-top"><small>Créditos · Rosario</small><div><div class="metric">—</div><span class="todo">Completar: consultas/mes o costo por lead</span></div></div>
-        <div class="case-b"><h3>Tu Préstamo Genial</h3><dl><div><dt>Desafío</dt><dd>Generar consultas de crédito en Meta, una categoría especial con segmentación limitada.</dd></div><div><dt>Qué hicimos</dt><dd>Sistema visual, reels mensuales, landing propia y campañas de leads y retargeting.</dd></div></dl><div class="tags"><span class="chip">Diseño</span><span class="chip">Contenido</span><span class="chip">Anuncios</span></div></div>
-      </article>
-      <article class="case">
-        <div class="case-top"><small>Automotor · Rosario</small><div><div class="metric">—</div><span class="todo">Completar: turnos o consultas generadas</span></div></div>
-        <div class="case-b"><h3>Renault Taller</h3><dl><div><dt>Desafío</dt><dd>Llenar la agenda del taller con clientes de la zona.</dd></div><div><dt>Qué hicimos</dt><dd>Pauta local en Meta y dos videos por mes para mostrar el servicio.</dd></div></dl><div class="tags"><span class="chip">Contenido</span><span class="chip">Anuncios</span></div></div>
-      </article>
-      <article class="case">
-        <div class="case-top"><small>Publicidad · Rosario</small><div><div class="metric">—</div><span class="todo">Completar: resultado principal</span></div></div>
-        <div class="case-b"><h3>Van Publicidad</h3><dl><div><dt>Desafío</dt><dd><span class="todo">Completar en una línea</span></dd></div><div><dt>Qué hicimos</dt><dd>Diseño, contenido mensual y campañas en Meta.</dd></div></dl><div class="tags"><span class="chip">Diseño</span><span class="chip">Contenido</span><span class="chip">Anuncios</span></div></div>
-      </article>
+    <!-- Para que el número cuente al aparecer: <div class="metric" data-count="40" data-prefix="−" data-suffix="%">−40%</div> -->
+    <div class="acc">
+      <details class="acc-i" name="casos" open>
+        <summary><span class="acc-n">01</span><span class="acc-t"><b>Tu Préstamo Genial</b><small>Créditos · Rosario</small></span><span class="tags"><span class="chip">Diseño</span><span class="chip">Contenido</span><span class="chip">Anuncios</span></span><span class="acc-x" aria-hidden="true"></span></summary>
+        <div class="acc-b">
+          <div class="case-top"><small>Resultado</small><div><div class="metric">—</div><span class="todo">Completar: consultas/mes o costo por lead</span></div></div>
+          <dl><div><dt>Desafío</dt><dd>Generar consultas de crédito en Meta, una categoría especial con segmentación limitada.</dd></div><div><dt>Qué hicimos</dt><dd>Sistema visual, reels mensuales, landing propia y campañas de leads y retargeting.</dd></div></dl>
+        </div>
+      </details>
+      <details class="acc-i" name="casos">
+        <summary><span class="acc-n">02</span><span class="acc-t"><b>Renault Taller</b><small>Automotor · Rosario</small></span><span class="tags"><span class="chip">Contenido</span><span class="chip">Anuncios</span></span><span class="acc-x" aria-hidden="true"></span></summary>
+        <div class="acc-b">
+          <div class="case-top"><small>Resultado</small><div><div class="metric">—</div><span class="todo">Completar: turnos o consultas generadas</span></div></div>
+          <dl><div><dt>Desafío</dt><dd>Llenar la agenda del taller con clientes de la zona.</dd></div><div><dt>Qué hicimos</dt><dd>Pauta local en Meta y videos para mostrar el servicio.</dd></div></dl>
+        </div>
+      </details>
+      <details class="acc-i" name="casos">
+        <summary><span class="acc-n">03</span><span class="acc-t"><b>Van Publicidad</b><small>Publicidad · Rosario</small></span><span class="tags"><span class="chip">Diseño</span><span class="chip">Contenido</span><span class="chip">Anuncios</span></span><span class="acc-x" aria-hidden="true"></span></summary>
+        <div class="acc-b">
+          <div class="case-top"><small>Resultado</small><div><div class="metric">—</div><span class="todo">Completar: resultado principal</span></div></div>
+          <dl><div><dt>Desafío</dt><dd><span class="todo">Completar en una línea</span></dd></div><div><dt>Qué hicimos</dt><dd>Diseño, contenido mensual y campañas en Meta.</dd></div></dl>
+        </div>
+      </details>
     </div>
   </div>
 </section>
@@ -132,17 +146,21 @@
   <div class="in">
     <div class="head split"><div class="head"><span class="eyebrow">Nuestro trabajo</span><h2>Así se ve.</h2></div><p class="lede"><span class="todo">Reemplazar cada recuadro por un reel o pieza real</span></p></div>
     <div class="work">
-      <div class="tile"><div class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></div>Reel · Tu Préstamo Genial</div>
-      <div class="tile">Placa · Van Publicidad</div>
-      <div class="tile"><div class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></div>Video · Renault Taller</div>
-      <div class="tile">Creativo · Campaña de leads</div>
+      <div class="tile t-r"><div class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></div><span>Reel · Tu Préstamo Genial</span><small>9:16</small></div>
+      <div class="tile t-s"><span>Placa · Van Publicidad</span><small>1:1</small></div>
+      <div class="tile t-p"><span>Creativo · Campaña de leads</span><small>4:5</small></div>
+      <div class="tile t-p"><span>Carrusel · Renault Taller</span><small>4:5</small></div>
+      <div class="tile t-r"><div class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></div><span>Video · Renault Taller</span><small>9:16</small></div>
+      <div class="tile t-s"><span>Story · Tu Préstamo Genial</span><small>1:1</small></div>
+      <div class="tile t-r"><div class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></div><span>Reel · Van Publicidad</span><small>9:16</small></div>
+      <div class="tile t-s"><span>Placa · Renault Taller</span><small>1:1</small></div>
     </div>
   </div>
 </section>
 
 <div class="band rev"><a href="precios.html" aria-label="Mirá los planes"><div class="track" aria-hidden="true"><span><b>Ver planes →</b> Presupuesto a medida <i></i> Sin tarifas ocultas <i></i> Reporte mensual <i></i> Pauta a tu nombre <i></i></span><span><b>Ver planes →</b> Presupuesto a medida <i></i> Sin tarifas ocultas <i></i> Reporte mensual <i></i> Pauta a tu nombre <i></i></span></div></a></div>
 
-<section>
+<section class="dark">
   <div class="in">
     <div class="head"><span class="eyebrow">Cómo trabajamos</span><h2>De la primera charla al primer reporte.</h2></div>
     <div class="steps">
@@ -154,7 +172,7 @@
   </div>
 </section>
 
-<section id="planes" style="padding-top:0">
+<section id="planes">
   <div class="in">
     <div class="head split"><div class="head"><span class="eyebrow">Planes</span><h2>Planes a la medida de tu negocio.</h2></div><p class="lede">Honorario mensual. La inversión en anuncios va aparte y a tu nombre, así siempre sabés cuánto se gasta.</p></div>
     <div class="plans">

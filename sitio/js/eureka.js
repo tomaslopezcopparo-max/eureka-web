@@ -2,7 +2,7 @@
 (()=>{
   if(!("IntersectionObserver" in window))return;
   const els=[...document.querySelectorAll("section > .in > .head, .duo, .team-t, .contact-l, #lead")];
-  document.querySelectorAll(".pains,.services,.cases,.work,.steps,.plans,.quotes,.faq,.incl,.rel").forEach(g=>
+  document.querySelectorAll(".pains,.services,.cases,.acc,.work,.steps,.plans,.quotes,.faq,.incl,.rel").forEach(g=>
     [...g.children].forEach((c,i)=>{c.style.setProperty("--d",(i*.09)+"s");els.push(c)}));
   const count=el=>{
     const to=parseFloat(el.dataset.count),pre=el.dataset.prefix||"",suf=el.dataset.suffix||"",t0=performance.now();
@@ -25,4 +25,16 @@ document.getElementById("lead")?.addEventListener("submit",e=>{
   const msg=`Hola Eureka! Soy ${f.nombre.value.trim()} (${f.negocio.value.trim()}). Busco: ${f.busca.value}. Inversión en anuncios: ${f.inv.value}. Los encontré por: ${f.origen.value}. Mi WhatsApp: ${f.wa.value.trim()}.`;
   const url="https://wa.me/5493415014376?text="+encodeURIComponent(msg);
   ok.innerHTML=`Listo. <a href="${url}" target="_blank" rel="noopener">Abrí WhatsApp para enviarnos tu consulta →</a>`;
+});
+
+// Pestañas de servicios: sin JS se ven los tres paneles
+document.querySelectorAll('[role="tablist"]').forEach(list=>{
+  const tabs=[...list.querySelectorAll('[role="tab"]')];
+  const show=t=>{tabs.forEach(x=>{const on=x===t;x.setAttribute("aria-selected",on);x.tabIndex=on?0:-1;
+    document.getElementById(x.getAttribute("aria-controls")).hidden=!on})};
+  tabs.forEach((t,i)=>{
+    t.addEventListener("click",()=>show(t));
+    t.addEventListener("keydown",e=>{const d=e.key==="ArrowRight"?1:e.key==="ArrowLeft"?-1:0;
+      if(!d)return;e.preventDefault();const n=tabs[(i+d+tabs.length)%tabs.length];n.focus();show(n)})});
+  show(tabs.find(t=>t.getAttribute("aria-selected")==="true")||tabs[0]);
 });
