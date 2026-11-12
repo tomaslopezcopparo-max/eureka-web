@@ -62,7 +62,7 @@ section{padding-block:clamp(64px,9vw,120px)}
 .hero .in{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:40px;align-items:end}
 @media (max-width:900px){.hero .in{grid-template-columns:minmax(0,1fr)}}
 .hero-t{display:grid;gap:28px}
-.hero h1 em{font-style:normal;background:linear-gradient(var(--azul),var(--azul)) no-repeat 0 94%/100% .07em}
+.hero h1 em{font-style:normal;color:#aef6ff;background:linear-gradient(var(--azul),var(--azul)) no-repeat 0 72%/100% .84em;padding:0 .1em;border-radius:.1em}
 .hero-cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 .hero-note{font-size:14px;color:var(--tinta-3)}
 .hero-img{margin:0;display:grid;gap:12px;justify-items:center}
@@ -210,7 +210,7 @@ footer a:hover{color:#fff}
 /* motion: entrada del hero, piezas flotando, aparición al scroll y brillo del CTA. Siempre activo. */
 @keyframes up{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
 @keyframes pop{from{opacity:0;transform:translateY(48px) scale(.92)}to{opacity:1;transform:none}}
-@keyframes mark{from{background-size:0% .07em}to{background-size:100% .07em}}
+@keyframes mark{from{background-size:0% .84em}to{background-size:100% .84em}}
 @keyframes shine{0%,75%{transform:translateX(-120%) skewX(-20deg)}100%{transform:translateX(320%) skewX(-20deg)}}
 .hero h1 .ln{display:block;animation:up .9s cubic-bezier(.2,.75,.2,1) both}
 .hero h1 .ln:nth-child(2){animation-delay:.08s}
@@ -219,7 +219,7 @@ footer a:hover{color:#fff}
 .hero h1 em{animation:mark .8s 1s cubic-bezier(.6,0,.2,1) both}
 /* titular que se reescribe: tacha métricas de vanidad hasta llegar a "venden" (lo maneja js/eureka.js) */
 .hero h1 .ln.rw-ln{white-space:nowrap}
-.hero h1 em.rw{animation:none;background-size:0% .07em}
+.hero h1 em.rw{animation:none;background-size:0% .84em}
 .hero h1 em.rw.done{animation:mark .8s .15s cubic-bezier(.6,0,.2,1) both}
 .hero h1 em .rw-w{display:inline-block;transition:opacity .25s,transform .25s}
 .hero h1 em.out .rw-w{color:var(--tinta-3);text-decoration:line-through;text-decoration-color:var(--azul);text-decoration-thickness:.06em}
