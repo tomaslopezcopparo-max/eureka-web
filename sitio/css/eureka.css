@@ -217,6 +217,13 @@ footer a:hover{color:#fff}
 .hero h1 .ln:nth-child(3){animation-delay:.16s}
 .hero h1 .sub{font-size:.4em;letter-spacing:-.045em;margin-top:.3em;color:var(--tinta-2);animation-delay:.24s}
 .hero h1 em{animation:mark .8s 1s cubic-bezier(.6,0,.2,1) both}
+/* titular que se reescribe: tacha métricas de vanidad hasta llegar a "venden" (lo maneja js/eureka.js) */
+.hero h1 .ln.rw-ln{white-space:nowrap}
+.hero h1 em.rw{animation:none;background-size:0% .07em}
+.hero h1 em.rw.done{animation:mark .8s .15s cubic-bezier(.6,0,.2,1) both}
+.hero h1 em .rw-w{display:inline-block;transition:opacity .25s,transform .25s}
+.hero h1 em.out .rw-w{color:var(--tinta-3);text-decoration:line-through;text-decoration-color:var(--azul);text-decoration-thickness:.06em}
+.hero h1 em.swap .rw-w{opacity:0;transform:translateY(.15em)}
 .hero .tagline{animation:up .9s .26s cubic-bezier(.2,.75,.2,1) both}
 .hero .lede{animation:up .9s .3s cubic-bezier(.2,.75,.2,1) both}
 .hero-img{animation:pop 1s .15s cubic-bezier(.2,.75,.2,1) both}
