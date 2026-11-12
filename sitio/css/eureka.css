@@ -75,11 +75,17 @@ section{padding-block:clamp(64px,9vw,120px)}
 .hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(5,8,26,.55),rgba(5,8,26,.4) 45%,rgba(2,28,99,.65))}
 @keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.14) translateY(-1.5%)}}
 .hero h1,.hero .tagline{color:#fff}
-.hero h1 em{background-image:linear-gradient(#fff,#fff)}
 .hero .lede,.hero-img figcaption{color:rgba(255,255,255,.82)}
 .hero-note{color:rgba(255,255,255,.65)}
 .hero .btn-g{color:#fff;border-color:rgba(255,255,255,.45)}
 .hero .btn-g:hover{background:rgba(255,255,255,.1)}
+/* título centrado sobre la foto: una sola columna, alto de pantalla */
+.hero{min-height:calc(100svh - 72px);display:grid;align-items:center}
+.hero .in{grid-template-columns:minmax(0,1fr);justify-items:center;text-align:center}
+.hero-t{justify-items:center}
+.hero .lede{margin-inline:auto}
+.hero-cta{justify-content:center}
+.hero-img{display:none}
 .chip{display:inline-flex;align-items:center;gap:6px;border-radius:var(--pill);padding:3px 10px;font-size:11px;font-weight:500;background:var(--suave);color:var(--azul)}
 
 /* frase sola entre secciones */
