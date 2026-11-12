@@ -369,3 +369,7 @@ section.dark .steps,section.dark .step{border-color:rgba(255,255,255,.2)}
 .acc-b .more{grid-column:1/-1}
 .case-top .metric + span{display:block;margin-top:8px;font-size:14px;color:rgba(255,255,255,.75)}
 .cs-cols .box ul,.cs-cols .box ol{display:grid;gap:12px}.cs-cols .box li{display:list-item;padding:0;border:0;grid-template-columns:none}
+.reels{display:grid;gap:14px}
+.reels-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+@media (max-width:900px){.reels-g{grid-template-columns:minmax(0,1fr);justify-items:center}}
+.reels-g iframe{width:100%;max-width:400px;height:700px;border:0;background:var(--blanco)}
