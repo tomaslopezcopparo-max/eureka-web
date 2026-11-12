@@ -68,6 +68,18 @@ section{padding-block:clamp(64px,9vw,120px)}
 .hero-img{margin:0;display:grid;gap:12px;justify-items:center}
 .hero-img img{width:100%;max-width:440px;height:auto}
 .hero-img figcaption{font-size:14px;color:var(--tinta-3);text-align:center;max-width:36ch}
+/* hero con foto de fondo: Monumento a la Bandera de noche (Pexels, Fabian) con zoom lento */
+.hero{position:relative;isolation:isolate;overflow:hidden;background:#05081a}
+.hero-bg{position:absolute;inset:0;z-index:-2;background:url(../img/hero-rosario.webp) center 60%/cover no-repeat;transform-origin:50% 55%;animation:kenburns 24s ease-in-out infinite alternate;will-change:transform}
+@media (max-width:900px){.hero-bg{background-image:url(../img/hero-rosario-m.webp)}}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(5,8,26,.55),rgba(5,8,26,.4) 45%,rgba(2,28,99,.65))}
+@keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.14) translateY(-1.5%)}}
+.hero h1,.hero .tagline{color:#fff}
+.hero h1 em{background-image:linear-gradient(#fff,#fff)}
+.hero .lede,.hero-img figcaption{color:rgba(255,255,255,.82)}
+.hero-note{color:rgba(255,255,255,.65)}
+.hero .btn-g{color:#fff;border-color:rgba(255,255,255,.45)}
+.hero .btn-g:hover{background:rgba(255,255,255,.1)}
 .chip{display:inline-flex;align-items:center;gap:6px;border-radius:var(--pill);padding:3px 10px;font-size:11px;font-weight:500;background:var(--suave);color:var(--azul)}
 
 /* frase sola entre secciones */
@@ -215,14 +227,14 @@ footer a:hover{color:#fff}
 .hero h1 .ln{display:block;animation:up .9s cubic-bezier(.2,.75,.2,1) both}
 .hero h1 .ln:nth-child(2){animation-delay:.08s}
 .hero h1 .ln:nth-child(3){animation-delay:.16s}
-.hero h1 .sub{font-size:.4em;letter-spacing:-.045em;margin-top:.3em;color:var(--tinta-2);animation-delay:.24s}
+.hero h1 .sub{font-size:.4em;letter-spacing:-.045em;margin-top:.3em;color:rgba(255,255,255,.82);animation-delay:.24s}
 .hero h1 em{animation:mark .8s 1s cubic-bezier(.6,0,.2,1) both}
 /* titular que se reescribe: tacha métricas de vanidad hasta llegar a "venden" (lo maneja js/eureka.js) */
 .hero h1 .ln.rw-ln{white-space:nowrap}
 .hero h1 em.rw{animation:none;background-size:0% .84em}
 .hero h1 em.rw.done{animation:mark .8s .15s cubic-bezier(.6,0,.2,1) both}
 .hero h1 em .rw-w{display:inline-block;transition:opacity .25s,transform .25s}
-.hero h1 em.out .rw-w{color:var(--tinta-3);text-decoration:line-through;text-decoration-color:var(--azul);text-decoration-thickness:.06em}
+.hero h1 em.out .rw-w{color:rgba(255,255,255,.55);text-decoration:line-through;text-decoration-color:#fff;text-decoration-thickness:.06em}
 .hero h1 em.swap .rw-w{opacity:0;transform:translateY(.15em)}
 .hero .tagline{animation:up .9s .26s cubic-bezier(.2,.75,.2,1) both}
 .hero .lede{animation:up .9s .3s cubic-bezier(.2,.75,.2,1) both}
