@@ -39,11 +39,11 @@ document.querySelectorAll('[role="tablist"]').forEach(list=>{
   show(tabs.find(t=>t.getAttribute("aria-selected")==="true")||tabs[0]);
 });
 
-// Titular del hero: "en likes" → "en comentarios" → "en ventas". Sin JS o con movimiento reducido queda "ventas".
+// Titular del hero: "en likes" → "en clics" → "en ventas". Sin JS o con movimiento reducido queda "ventas".
 (()=>{
   const em=document.querySelector(".hero h1 em"),h1=em?.closest("h1");
   if(!em||matchMedia("(prefers-reduced-motion: reduce)").matches)return;
-  const words=["likes","comentarios",em.textContent],w=document.createElement("span");
+  const words=["likes","clics",em.textContent],w=document.createElement("span");
   h1.setAttribute("aria-label",h1.textContent.replace(/\s+/g," ").trim());
   w.className="rw-w";w.setAttribute("aria-hidden","true");w.textContent=words[0];
   em.textContent="";em.append(w);em.classList.add("rw");em.parentElement.classList.add("rw-ln");
