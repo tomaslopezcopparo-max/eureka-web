@@ -5,14 +5,14 @@
 
 /* Layout: sitio de agencia en una columna ancha, titulares grandes y livianos.
    Color: el azul de la marca como único color; todo lo demás, neutros (gris de fondo, blanco, casi negro).
-   Radios: 0 en bloques y secciones, 6px en imágenes chicas y campos, píldora solo en botones y pestañas. */
+   Radios: 20px en bloques, 10px en imágenes chicas y campos, píldora en botones, pestañas y opciones. */
 :root{
   --azul:#04298a; --azul-osc:#021c63;
   --fondo:#eeeeee; --blanco:#ffffff; --negro:#15171d;
   --tinta:#1c1f27; --tinta-2:#4b4f5a; --tinta-3:#80848e;
   --linea:rgba(21,23,29,.12); --suave:rgba(4,41,138,.06);
   --sans:"Open Sauce Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --r:0px; --r-s:6px; --pill:999px;
+  --r:20px; --r-s:10px; --pill:999px;
   --max:1240px;
   color-scheme:light;
 }
@@ -108,7 +108,7 @@ section{padding-block:clamp(64px,9vw,120px)}
 .marq-t{list-style:none;margin:0;padding:0;display:flex;gap:8px;width:max-content;animation:marq 48s linear infinite}
 .marq.rev .marq-t{animation-direction:reverse;animation-duration:54s}
 .marq:hover .marq-t{animation-play-state:paused}
-.marq-t li{background:var(--blanco);flex:none;width:clamp(150px,18vw,220px)}
+.marq-t li{background:var(--blanco);border-radius:var(--r-s);overflow:hidden;flex:none;width:clamp(150px,18vw,220px)}
 .marq-t img{display:block;width:100%;height:auto;aspect-ratio:2/1;transition:transform .3s cubic-bezier(.2,.75,.2,1)}
 .marq-t li:hover img{transform:scale(1.06)}
 @keyframes marq{to{transform:translateX(calc(-50% - 4px))}}
@@ -179,7 +179,7 @@ section{padding-block:clamp(64px,9vw,120px)}
 @media (max-width:860px){.team{grid-template-columns:minmax(0,1fr)}}
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .person{margin:0;display:grid;gap:10px;align-content:start}
-.person img,.person .ph{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center 30%;background:var(--blanco)}
+.person img,.person .ph{border-radius:var(--r);width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center 30%;background:var(--blanco)}
 .person img{display:block}
 .person .ph{display:grid;place-items:center}
 .duo{align-items:start}
@@ -278,7 +278,7 @@ footer a:hover{color:#fff}
 .page-hero .hero-t > :nth-child(3){animation-delay:.14s}
 .page-hero .hero-t > :nth-child(4){animation-delay:.22s}
 .page-hero .hero-t > :nth-child(5){animation-delay:.3s}
-.glance{background:var(--azul);color:#fff;border-radius:0;padding:28px;display:grid;gap:4px;position:relative;overflow:hidden;isolation:isolate;animation:pop 1s .2s cubic-bezier(.2,.75,.2,1) both}
+.glance{background:var(--azul);color:#fff;border-radius:var(--r);padding:28px;display:grid;gap:4px;position:relative;overflow:hidden;isolation:isolate;animation:pop 1s .2s cubic-bezier(.2,.75,.2,1) both}
 .glance .eyebrow{color:rgba(255,255,255,.65);margin-bottom:10px}
 .glance dl{margin:0;display:grid;gap:0}
 .glance dl div{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.2)}
@@ -300,7 +300,7 @@ footer a:hover{color:#fff}
 .rel{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 @media (max-width:860px){.rel{grid-template-columns:minmax(0,1fr)}}
 .rel .case{grid-template-rows:auto 1fr}
-.cta-block{background:var(--azul);color:#fff;border-radius:0;padding:clamp(28px,5vw,64px);display:grid;grid-template-columns:minmax(0,1.4fr) auto;gap:24px 40px;align-items:center;position:relative;overflow:hidden;isolation:isolate}
+.cta-block{background:var(--azul);color:#fff;border-radius:var(--r);padding:clamp(28px,5vw,64px);display:grid;grid-template-columns:minmax(0,1.4fr) auto;gap:24px 40px;align-items:center;position:relative;overflow:hidden;isolation:isolate}
 .cta-block h2{color:#fff}
 .cta-block p{color:rgba(255,255,255,.78);margin-top:14px;max-width:52ch}
 .cta-block .hero-cta{animation:none}
@@ -376,7 +376,7 @@ section.dark .steps,section.dark .step{border-color:rgba(255,255,255,.2)}
 .cs-meta b{font-weight:500;color:var(--tinta-2)}
 .kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
 @media (max-width:900px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.kpi{background:var(--azul);color:#fff;padding:22px;display:grid;gap:14px;align-content:space-between;min-height:150px}
+.kpi{background:var(--azul);border-radius:var(--r);color:#fff;padding:22px;display:grid;gap:14px;align-content:space-between;min-height:150px}
 .kpi .metric{font-variant-numeric:tabular-nums}
 .kpi span{font-size:14px;color:rgba(255,255,255,.75);line-height:1.35}
 .cs-cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:16px;align-items:start}
@@ -388,7 +388,7 @@ section.dark .steps,section.dark .step{border-color:rgba(255,255,255,.2)}
 .cmp.res td.up{color:var(--azul);font-weight:500}
 .cs-hl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
 @media (max-width:760px){.cs-hl{grid-template-columns:minmax(0,1fr)}}
-.cs-hl li{background:var(--blanco);padding:20px 22px;color:var(--tinta-2);font-size:15px;border-left:3px solid var(--azul)}
+.cs-hl li{background:var(--blanco);border-radius:var(--r-s);padding:20px 22px;color:var(--tinta-2);font-size:15px;border-left:3px solid var(--azul)}
 .cs-hl b{color:var(--tinta);font-weight:500}
 .cs + .cs{border-top:1px solid var(--linea);padding-top:clamp(48px,7vw,96px)}
 .acc-b .more{grid-column:1/-1}
@@ -429,3 +429,11 @@ section.dark .steps,section.dark .step{border-color:rgba(255,255,255,.2)}
 /* casos: el fondo se ilumina siguiendo el mouse */
 .acc-i{background:radial-gradient(520px circle at var(--x,50%) var(--y,0%),var(--suave),transparent 65%) no-repeat,var(--blanco);background-size:0 0,auto}
 .acc-i:hover{background-size:auto,auto}
+
+/* marco del formulario: borde con un brillo que gira despacio */
+@property --ang{syntax:"<angle>";initial-value:0deg;inherits:false}
+@keyframes giro{to{--ang:360deg}}
+#lead{position:relative;box-shadow:0 30px 60px -30px rgba(2,28,99,.55)}
+#lead::before{content:"";position:absolute;inset:-2px;border-radius:calc(var(--r) + 2px);z-index:-1;
+  background:conic-gradient(from var(--ang),rgba(255,255,255,.15) 0 62%,rgba(174,246,255,.9) 76%,#fff 82%,rgba(255,255,255,.15) 92%);animation:giro 6s linear infinite}
+@media (prefers-reduced-motion:reduce){#lead::before{animation:none}}
