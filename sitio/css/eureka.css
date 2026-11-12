@@ -101,11 +101,18 @@ section{padding-block:clamp(64px,9vw,120px)}
 .clients .in{display:grid;gap:24px}
 .clients-t{color:var(--tinta-2);max-width:62ch}
 .clients-t b{font-weight:500;color:var(--tinta)}
-.logo-wall{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
-.logo-wall li{background:var(--blanco)}
-.logo-wall img{display:block;width:100%;height:auto;aspect-ratio:2/1}
-@media (max-width:900px){.logo-wall{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media (max-width:520px){.logo-wall{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* marquesina: dos filas en sentidos opuestos; se frena al pasar el mouse */
+.clients .in{gap:16px}
+.marq{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marq + .marq{margin-top:-8px}
+.marq-t{list-style:none;margin:0;padding:0;display:flex;gap:8px;width:max-content;animation:marq 48s linear infinite}
+.marq.rev .marq-t{animation-direction:reverse;animation-duration:54s}
+.marq:hover .marq-t{animation-play-state:paused}
+.marq-t li{background:var(--blanco);flex:none;width:clamp(150px,18vw,220px)}
+.marq-t img{display:block;width:100%;height:auto;aspect-ratio:2/1;transition:transform .3s cubic-bezier(.2,.75,.2,1)}
+.marq-t li:hover img{transform:scale(1.06)}
+@keyframes marq{to{transform:translateX(calc(-50% - 4px))}}
+@media (prefers-reduced-motion:reduce){.marq-t{animation:none;flex-wrap:wrap;width:auto}.marq{-webkit-mask-image:none;mask-image:none}.marq-t li[aria-hidden],.marq-t li:has(img[aria-hidden]){display:none}}
 .tagline{font-size:clamp(20px,2vw,26px);letter-spacing:-.04em;color:var(--azul);font-weight:500}
 .checks{list-style:none;margin:0;padding:0;display:grid;gap:10px}
 .checks li{display:flex;gap:12px;align-items:baseline;color:#fff}
@@ -391,3 +398,34 @@ section.dark .steps,section.dark .step{border-color:rgba(255,255,255,.2)}
 .reels-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
 @media (max-width:900px){.reels-g{grid-template-columns:minmax(0,1fr);justify-items:center}}
 .reels-g iframe{width:100%;max-width:400px;height:700px;border:0;background:var(--blanco)}
+
+/* ---- ronda 4: formulario en pasos (primero el negocio, al final el WhatsApp) y brillo en casos ---- */
+.prog{display:grid;gap:10px}
+.prog .eyebrow{color:var(--tinta-3)}
+.prog-l{display:block;height:2px;background:var(--linea)}
+.prog-l i{display:block;height:100%;width:33.34%;background:var(--azul);transition:width .5s cubic-bezier(.2,.75,.2,1)}
+.paso{border:0;margin:0;padding:0;min-width:0;display:grid;gap:16px}
+.paso legend{padding:0;margin-bottom:16px;font-size:clamp(24px,2.4vw,30px);letter-spacing:-.045em;line-height:1.05;color:var(--azul)}
+.js-pasos .paso{display:none}
+.js-pasos .paso.on{display:grid;animation:up .5s cubic-bezier(.2,.75,.2,1) both}
+.js-pasos .paso.on.back{animation-name:upb}
+@keyframes upb{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:none}}
+.f-l{font-size:13px;font-weight:500;color:var(--tinta-2)}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{position:relative;cursor:pointer}
+.opt input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.opt span{display:inline-flex;align-items:center;gap:8px;border-radius:var(--pill);padding:11px 18px;font:500 15px/1 var(--sans);color:var(--azul);background:var(--fondo);border:1.5px solid transparent;transition:background .2s,color .2s,border-color .2s}
+.opt:hover span{border-color:var(--azul)}
+.opt input:checked + span{background:var(--azul);color:#fff}
+.opt input[type=checkbox]:checked + span::before{content:"";width:12px;height:12px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7'/%3E%3C/svg%3E") center/contain no-repeat}
+.opt input:focus-visible + span{outline:2px solid var(--azul);outline-offset:3px}
+.f-nav{display:flex;gap:10px}
+.f-nav .btn-p{flex:1;justify-content:center}
+.f-nav .btn-g{padding-inline:22px}
+.err{color:var(--azul);font-weight:500}
+.gracias{display:grid;gap:20px;animation:up .5s cubic-bezier(.2,.75,.2,1) both}
+.gracias .btn{justify-content:center}
+.f input[aria-invalid=true]{border-color:var(--azul)}
+/* casos: el fondo se ilumina siguiendo el mouse */
+.acc-i{background:radial-gradient(520px circle at var(--x,50%) var(--y,0%),var(--suave),transparent 65%) no-repeat,var(--blanco);background-size:0 0,auto}
+.acc-i:hover{background-size:auto,auto}

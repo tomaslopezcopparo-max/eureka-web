@@ -16,16 +16,39 @@
   els.forEach(el=>{if(el.getBoundingClientRect().top<innerHeight)return;el.classList.add("rv","pre");io.observe(el)});
 })();
 
-document.getElementById("lead")?.addEventListener("submit",e=>{
-  e.preventDefault();
-  const f=e.target, ok=document.getElementById("ok");
-  const req=["nombre","wa","negocio"].filter(n=>!f[n].value.trim());
-  ok.hidden=false;
-  if(req.length){ok.textContent="Completá nombre, WhatsApp y negocio para seguir.";f[req[0]].focus();return}
-  const msg=`Hola Eureka! Soy ${f.nombre.value.trim()} (${f.negocio.value.trim()}). Busco: ${f.busca.value}. Inversión en anuncios: ${f.inv.value}. Los encontré por: ${f.origen.value}. Mi WhatsApp: ${f.wa.value.trim()}.`;
-  const url="https://wa.me/5493415014376?text="+encodeURIComponent(msg);
-  ok.innerHTML=`Listo. <a href="${url}" target="_blank" rel="noopener">Abrí WhatsApp para enviarnos tu consulta →</a>`;
-});
+// Formulario en 3 pasos: primero el negocio, después qué necesita y al final el WhatsApp.
+// Sin JS se ven los tres pasos juntos y el envío funciona igual.
+(()=>{
+  const f=document.getElementById("lead");if(!f)return;
+  const pasos=[...f.querySelectorAll(".paso")],nombres=["Tu negocio","En qué te ayudamos","A dónde te lo mandamos"];
+  const err=document.getElementById("err"),back=document.getElementById("f-back"),nextT=document.getElementById("f-next-t");
+  const ok=document.getElementById("ok"),waLink=document.getElementById("wa-link"),nav=f.querySelector(".f-nav"),prog=f.querySelector(".prog");
+  let i=0;f.classList.add("js-pasos");
+  const show=(n,dir)=>{i=n;pasos.forEach((p,k)=>{p.classList.toggle("on",k===i);p.classList.toggle("back",k===i&&dir<0)});
+    document.getElementById("prog-t").textContent=`Paso ${i+1} de 3 · ${nombres[i]}`;
+    document.getElementById("prog-b").style.width=((i+1)/3*100)+"%";
+    back.hidden=i===0;nextT.textContent=i===2?"Quiero mi diagnóstico":"Siguiente";err.hidden=true;
+    if(i===2){const n=f.nombre.value.trim().split(/\s+/)[0];
+      document.getElementById("paso3-t").textContent=(n?`Listo, ${n}. `:"")+"¿A qué WhatsApp te mandamos el diagnóstico?"}};
+  const falta=campos=>{const v=campos.filter(n=>!f[n].value.trim());campos.forEach(n=>f[n].setAttribute("aria-invalid",v.includes(n)));return v};
+  const msg=()=>{const busca=[...f.querySelectorAll('[name=busca]:checked')].map(x=>x.value).join(", ")||"No sé, quiero el diagnóstico";
+    const origen=f.querySelector('[name=origen]:checked')?.value;
+    return `Hola Eureka! Soy ${f.nombre.value.trim()} (${f.negocio.value.trim()}). Busco: ${busca}. Inversión en anuncios: ${f.querySelector('[name=inv]:checked').value}.`+(origen?` Los encontré por: ${origen}.`:"")+` Mi WhatsApp: ${f.wa.value.trim()}.`};
+  const link=()=>waLink.href="https://wa.me/5493415014376?text="+encodeURIComponent(msg());
+  back.addEventListener("click",()=>show(i-1,-1));
+  f.addEventListener("submit",e=>{e.preventDefault();
+    const req=[["nombre","negocio"],[],["wa"]][i],v=falta(req);
+    if(v.length){err.hidden=false;err.textContent=v.includes("wa")?"Dejanos tu WhatsApp para mandarte el diagnóstico.":"Completá tu nombre y tu negocio para seguir.";f[v[0]].focus();return}
+    if(i<2){show(i+1,1);pasos[i].querySelector("input")?.focus({preventScroll:true});return}
+    pasos.forEach(p=>p.classList.remove("on"));nav.hidden=true;prog.hidden=true;err.hidden=true;ok.hidden=false;link();
+  });
+  f.querySelectorAll('[name=origen]').forEach(r=>r.addEventListener("change",link));
+  show(0,1);
+})();
+
+// Casos: el fondo se ilumina siguiendo el mouse
+document.querySelectorAll(".acc-i").forEach(c=>c.addEventListener("pointermove",e=>{const r=c.getBoundingClientRect();
+  c.style.setProperty("--x",(e.clientX-r.left)+"px");c.style.setProperty("--y",(e.clientY-r.top)+"px")}));
 
 // Pestañas de servicios: sin JS se ven los tres paneles
 document.querySelectorAll('[role="tablist"]').forEach(list=>{
