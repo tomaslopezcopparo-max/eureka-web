@@ -342,3 +342,30 @@ section.dark .steps,section.dark .step{border-color:rgba(255,255,255,.2)}
 .plan,.acc-i,.box,.case{transition:transform .3s cubic-bezier(.2,.75,.2,1),box-shadow .3s}
 .plan:hover,.rel .case:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(4,41,138,.12)}
 .acc-i:hover{box-shadow:0 12px 30px rgba(4,41,138,.08)}
+
+/* página de casos */
+.cs{display:grid;gap:clamp(24px,3vw,40px)}
+.cs-head{display:grid;gap:14px}
+.cs-head .tags{display:flex;gap:6px;flex-wrap:wrap}
+.cs-meta{display:flex;gap:8px 24px;flex-wrap:wrap;font-size:14px;color:var(--tinta-3)}
+.cs-meta b{font-weight:500;color:var(--tinta-2)}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+@media (max-width:900px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.kpi{background:var(--azul);color:#fff;padding:22px;display:grid;gap:14px;align-content:space-between;min-height:150px}
+.kpi .metric{font-variant-numeric:tabular-nums}
+.kpi span{font-size:14px;color:rgba(255,255,255,.75);line-height:1.35}
+.cs-cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:16px;align-items:start}
+@media (max-width:900px){.cs-cols{grid-template-columns:minmax(0,1fr)}}
+.cs-cols ul,.cs-cols ol{margin:0;padding-left:20px;display:grid;gap:10px;color:var(--tinta-2);font-size:15px}
+.cs-cols b{color:var(--tinta);font-weight:500}
+.cmp.res td,.cmp.res th{text-align:right}
+.cmp.res th:first-child,.cmp.res tbody th{text-align:left}
+.cmp.res td.up{color:var(--azul);font-weight:500}
+.cs-hl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+@media (max-width:760px){.cs-hl{grid-template-columns:minmax(0,1fr)}}
+.cs-hl li{background:var(--blanco);padding:20px 22px;color:var(--tinta-2);font-size:15px;border-left:3px solid var(--azul)}
+.cs-hl b{color:var(--tinta);font-weight:500}
+.cs + .cs{border-top:1px solid var(--linea);padding-top:clamp(48px,7vw,96px)}
+.acc-b .more{grid-column:1/-1}
+.case-top .metric + span{display:block;margin-top:8px;font-size:14px;color:rgba(255,255,255,.75)}
+.cs-cols .box ul,.cs-cols .box ol{display:grid;gap:12px}.cs-cols .box li{display:list-item;padding:0;border:0;grid-template-columns:none}
