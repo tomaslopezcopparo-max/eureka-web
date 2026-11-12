@@ -245,6 +245,7 @@ footer a:hover{color:#fff}
 /* titular que se reescribe: tacha métricas de vanidad hasta llegar a "venden" (lo maneja js/eureka.js) */
 .hero h1 .ln.rw-ln{white-space:nowrap}
 .hero h1 em.rw{animation:none;background-size:0% .84em}
+.hero h1 em.rw:not(.done){color:rgba(255,255,255,.55)}
 .hero h1 em.rw.done{animation:mark .8s .15s cubic-bezier(.6,0,.2,1) both}
 .hero h1 em .rw-w{display:inline-block;transition:opacity .25s,transform .25s}
 .hero h1 em.out .rw-w{color:rgba(255,255,255,.55);text-decoration:line-through;text-decoration-color:#fff;text-decoration-thickness:.06em}
