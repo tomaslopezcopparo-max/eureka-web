@@ -1,6 +1,7 @@
 // Motion: aparición al scroll (solo para lo que arranca fuera de pantalla) y contadores de casos
 (()=>{
   if(!("IntersectionObserver" in window))return;
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;
   const els=[...document.querySelectorAll("section > .in > .head, .duo, .team-t, .contact-l, #lead")];
   document.querySelectorAll(".pains,.services,.cases,.acc,.work,.steps,.plans,.quotes,.faq,.incl,.rel").forEach(g=>
     [...g.children].forEach((c,i)=>{c.style.setProperty("--d",(i*.09)+"s");els.push(c)}));
@@ -45,6 +46,13 @@
   f.querySelectorAll('[name=origen]').forEach(r=>r.addEventListener("change",link));
   show(0,1);
 })();
+
+// Reel de un caso: se carga recién cuando se abre, para no traer Instagram en la home
+document.querySelectorAll(".acc-i").forEach(d=>{
+  const load=()=>d.querySelectorAll("iframe[data-src]").forEach(f=>{if(!f.getAttribute("src"))f.src=f.dataset.src});
+  d.addEventListener("toggle",()=>{if(d.open)load()});
+  if(d.open)load();
+});
 
 // Casos: el fondo se ilumina siguiendo el mouse
 document.querySelectorAll(".acc-i").forEach(c=>c.addEventListener("pointermove",e=>{const r=c.getBoundingClientRect();
