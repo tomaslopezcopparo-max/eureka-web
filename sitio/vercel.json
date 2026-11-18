@@ -1,4 +1,16 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/index", "destination": "/", "permanent": true },
+    { "source": "/nosotros", "destination": "/#nosotros", "permanent": true },
+    { "source": "/servicios", "destination": "/#servicios", "permanent": true },
+    { "source": "/proyectos", "destination": "/casos", "permanent": true },
+    { "source": "/contacto", "destination": "/#contacto", "permanent": true },
+    { "source": "/project-van-publicidad", "destination": "/casos#van", "permanent": true },
+    { "source": "/project-publisite", "destination": "/casos", "permanent": true },
+    { "source": "/project-maxijaimeodontologia", "destination": "/casos", "permanent": true },
+    { "source": "/feed", "destination": "/", "permanent": true },
+    { "source": "/comments/feed", "destination": "/", "permanent": true }
+  ]
 }
