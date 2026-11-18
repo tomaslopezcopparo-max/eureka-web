@@ -1,0 +1,66 @@
+/* Eureka — design system
+   Tokens y componentes base. Fuente de verdad: este archivo.
+   Uso: <link rel="stylesheet" href="design-system/tokens.css"> (ajustar ruta a fonts/ si se copia). */
+
+@font-face{font-family:"Open Sauce Sans";src:url("fonts/OpenSauceSans-300.woff2") format("woff2");font-weight:300;font-display:swap}
+@font-face{font-family:"Open Sauce Sans";src:url("fonts/OpenSauceSans-400.woff2") format("woff2");font-weight:400 500;font-display:swap}
+@font-face{font-family:"Open Sauce Sans";src:url("fonts/OpenSauceSans-700.woff2") format("woff2");font-weight:700;font-display:swap}
+
+:root{
+  /* Marca */
+  --azul:#04298a; --azul-600:#1f3fa8; --violeta:#1f0249;
+  --cian:#aef6ff; --cian-brillo:#bbfcff;
+
+  /* Superficies y texto */
+  --fondo:#eeeeee; --panel:#ffffff;
+  --tinta:#04298a; --tinta-2:#4a5a8f; --tinta-3:#7a86ad;
+  --linea:rgba(4,41,138,.12); --suave:rgba(4,41,138,.05);
+
+  /* Series para gráficos (en este orden) */
+  --serie-1:#04298a; --serie-2:#3f6be0; --serie-3:#8fb4ff; --serie-4:#c7d4f5;
+
+  /* Estados */
+  --ok:#0f7a4a; --ok-bg:#e1f5ea; --warn:#8a5a00; --warn-bg:#fff1cc;
+
+  /* Tipografía */
+  --sans:"Open Sauce Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --tracking-display:-.07em; --tracking-logo:-.085em; --tracking-eyebrow:.194em;
+
+  /* Radios */
+  --r-panel:16px; --r-card:12px; --r-media:10px; --r-pill:999px;
+
+  /* Borde estándar */
+  --borde:1.5px solid var(--linea);
+
+  /* Motivo de marca: orbe */
+  --orbe:radial-gradient(circle at 30% 30%,var(--cian-brillo),var(--violeta) 70%);
+}
+
+/* Base */
+body{margin:0;background:var(--fondo);color:var(--tinta);font:400 14px/1.4 var(--sans);-webkit-font-smoothing:antialiased}
+.num{font-variant-numeric:tabular-nums}
+:focus-visible{outline:2px solid var(--azul-600);outline-offset:2px}
+
+/* Tipografía */
+.logo{font-weight:400;letter-spacing:var(--tracking-logo);line-height:.83}
+.display{font-weight:400;font-size:clamp(34px,4vw,48px);line-height:.9;letter-spacing:var(--tracking-display);text-wrap:balance}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--tinta-3)}
+
+/* Superficies */
+.panel{background:var(--panel);border:var(--borde);border-radius:var(--r-panel);padding:20px}
+.card{background:var(--panel);border:var(--borde);border-radius:var(--r-card);padding:14px}
+.marca{background:var(--azul);color:var(--fondo);position:relative;overflow:hidden;isolation:isolate}
+.marca::after{content:"";position:absolute;width:220px;height:220px;right:-80px;top:-90px;border-radius:50%;background:var(--orbe);opacity:.35;z-index:-1}
+.marca .destacado{color:var(--cian)}
+
+/* Etiquetas */
+.pill{display:inline-flex;align-items:center;gap:8px;background:var(--panel);border:var(--borde);border-radius:var(--r-pill);padding:7px 14px;font-weight:500;font-size:13px}
+.tag{display:inline-flex;align-items:center;gap:6px;border-radius:var(--r-pill);padding:3px 10px;font-size:12px;font-weight:500;white-space:nowrap}
+.tag::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.tag.ok{background:var(--ok-bg);color:var(--ok)}
+.tag.warn{background:var(--warn-bg);color:var(--warn)}
+.tag.info{background:var(--suave);color:var(--azul-600)}
+.chip{display:inline-block;border:var(--borde);border-radius:var(--r-pill);padding:2px 9px;font-size:12px;font-weight:500}
+
+/* Avisos */
+.aviso{display:flex;gap:12px;background:var(--warn-bg);color:var(--warn);border-radius:var(--r-media);padding:12px 14px;font-size:13px}
