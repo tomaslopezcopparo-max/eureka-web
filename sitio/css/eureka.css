@@ -562,3 +562,30 @@ section.dark .step::before{background:#aef6ff;color:var(--azul);box-shadow:0 0 0
   .rv.pre{opacity:1;transform:none}
   .marq-t{animation:none}
 }
+
+/* ---- ronda 5: casos como lomos de libros (supabase/sections.json /data/8) ---- */
+.sb{display:flex;gap:8px;height:460px}
+.sb-c{position:relative;border-radius:var(--r);overflow:hidden;flex:0 0 76px;cursor:pointer;transition:flex-basis .6s cubic-bezier(.2,.75,.2,1),filter .2s;color:#fff;background:var(--azul)}
+.sb-c.on{flex:1 1 auto;cursor:default}
+.sb-c:focus-visible{outline:2px solid var(--azul);outline-offset:3px}
+.sb-c.tpg{background:linear-gradient(160deg,#0a3bbd 0%,#04298a 55%,#021c63 100%)}
+.sb-c:not(.on):hover{filter:brightness(1.15)}
+.bgs{position:absolute;top:0;bottom:0;right:0;width:54%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;transition:opacity .3s}
+.bgs img{width:100%;height:100%;object-fit:cover;display:block}
+.sb-c:not(.on) .bgs{opacity:0}
+.sb-in{position:absolute;inset:0 54% 0 0;z-index:2;padding:28px;display:grid;align-content:space-between;opacity:0;visibility:hidden;transition:opacity .3s}
+.sb-c.tpg .sb-in{right:0}
+.sb-c.on .sb-in{opacity:1;visibility:visible;transition-delay:.25s}
+.sb-in small{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.78)}
+.sb-in h3{color:#fff;font-size:clamp(26px,2.8vw,40px);letter-spacing:-.05em;line-height:1.02;max-width:20ch}
+.sb-in h3 b{font-weight:700;color:#aef6ff}
+.sb-in p{margin:10px 0 0;color:rgba(255,255,255,.8);font-size:15px;max-width:52ch}
+.sb-in a{color:#fff;font-weight:500;font-size:15px;text-decoration:none;display:inline-flex;gap:8px;margin-top:16px}
+.sb-in a:hover .arr{transform:translateX(5px)}
+.sb-in a .arr{transition:transform .2s}
+.sb-tab{position:absolute;z-index:2;inset:22px 0;display:flex;flex-direction:column;align-items:center;justify-content:space-between;transition:opacity .2s}
+.sb-tab b{font-size:20px;font-weight:700;letter-spacing:-.05em;color:#aef6ff}
+.sb-tab span{writing-mode:vertical-rl;transform:rotate(180deg);font-size:14px;font-weight:500;letter-spacing:.04em;white-space:nowrap}
+.sb-c.on .sb-tab{opacity:0;pointer-events:none}
+@media (max-width:760px){.sb{height:620px;gap:6px}.sb-c{flex:0 0 56px}.sb-tab b{font-size:16px}.bgs{top:auto;height:250px;width:100%}.sb-in{inset:0 0 250px 0;padding:22px}.sb-c.tpg .sb-in{bottom:0}.sb-in h3{font-size:26px}.sb-in p{font-size:14px}}
+@media (prefers-reduced-motion:reduce){.sb-c,.sb-in,.bgs{transition:none}}
