@@ -84,7 +84,7 @@
       <p>No son excluyentes. Meta recomienda usar las dos y que se complementen. En abril de 2026 Meta informó que los anunciantes que usan la API de conversiones para eventos web tuvieron, en promedio, un costo por resultado 17,8% menor que los que no la usan. Es un dato de la propia Meta.</p>
 
       <h2>¿Cómo instalar el píxel de Facebook paso a paso?</h2>
-      <p>El primer paso es igual para cualquier sitio: crear el conjunto de datos. Necesitás acceso de administrador al portafolio comercial (Business Manager) de tu empresa.</p>
+      <p>Primero se crea el conjunto de datos. Necesitás acceso de administrador al portafolio comercial de tu empresa.</p>
       <ol>
         <li>Entrá al <b>Administrador de eventos</b> desde Meta Business Suite y revisá arriba que estés en el portafolio comercial correcto.</li>
         <li>Hacé clic en <b>Conectar datos</b>, elegí <b>Web</b> y seguí.</li>
@@ -100,7 +100,7 @@
         <li>Pegalo dentro de la etiqueta <code>&lt;head&gt;</code> de todas las páginas del sitio. Con eso ya mide <code>PageView</code>.</li>
         <li>Agregá los eventos donde corresponda. Por ejemplo, en la página de "gracias" de un formulario: <code>fbq('track', 'Lead');</code></li>
       </ol>
-      <p>Para la API de conversiones manual, en <b>Configuración</b> generás un token de acceso y un desarrollador programa el envío desde tu servidor. Es la opción más flexible y la que más trabajo técnico pide.</p>
+      <p>Para la API manual, generás un token de acceso en <b>Configuración</b> y un desarrollador programa el envío desde tu servidor.</p>
 
       <h3>Opción 2: Tienda Nube</h3>
       <ol>
@@ -132,7 +132,7 @@
 
 
       <h2>¿Qué eventos estándar conviene medir en una pyme?</h2>
-      <p>Meta tiene una lista de <b>eventos estándar</b>: nombres fijos que el algoritmo entiende sin explicación, como Lead o Purchase. Usá esos antes que eventos personalizados. La regla es medir el paso más cercano a la venta que tenga suficiente volumen.</p>
+      <p>Los <b>eventos estándar</b> son nombres fijos que Meta entiende sin configuración extra, como Lead o Purchase. Preferilos a los personalizados y optimizá al paso más cercano a la venta que tenga volumen.</p>
       <div class="table-wrap"><table>
         <thead><tr><th>Rubro</th><th>Eventos recomendados</th><th>Para optimizar</th></tr></thead>
         <tbody>
@@ -160,7 +160,7 @@
         <li>En el Administrador de eventos, abrí <b>Orígenes de datos</b> en la barra lateral y elegí tu conjunto de datos.</li>
         <li>Entrá a la pestaña <b>Probar eventos</b>.</li>
         <li>En <b>Probar eventos del navegador</b>, escribí la URL de tu sitio y hacé clic en <b>Abrir sitio web</b>.</li>
-        <li>Navegá como un cliente: entrá a una ficha, completá el formulario de prueba, tocá el botón de WhatsApp.</li>
+        <li>Navegá como un cliente: entrá a una ficha, completá el formulario, tocá WhatsApp.</li>
         <li>Volvé a la pestaña de Meta. Cada acción tiene que aparecer con su nombre. Si llega por navegador y por servidor, debería figurar como deduplicada.</li>
         <li>Para probar la API, copiá el <b>código de prueba</b> que muestra la misma pestaña y cargalo en tu integración o pasáselo al desarrollador (parámetro <code>test_event_code</code>).</li>
       </ol>
