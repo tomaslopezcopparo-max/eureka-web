@@ -67,10 +67,10 @@
       <h2>¿Qué es el píxel de Meta?</h2>
       <p>El <b>píxel de Meta</b> (antes píxel de Facebook) es un fragmento de código JavaScript que se instala en tu sitio web y le avisa a Meta cada vez que alguien hace algo importante: entra a una página, ve un producto, completa un formulario o compra. A cada una de esas acciones se la llama <b>evento</b>.</p>
       <p>Con esos eventos Meta mide qué trajo cada anuncio, arma públicos para retargeting y aprende a quién mostrarle tus anuncios. Si el píxel mide mal, la campaña optimiza a ciegas.</p>
-      <p>Hoy, dentro del Administrador de eventos (Events Manager), Meta ya no habla de "píxeles" sino de <b>conjuntos de datos</b>. Un conjunto de datos reúne los eventos que llegan por el píxel, por la API de conversiones y por otras fuentes. El ID del conjunto de datos es el mismo número que antes llamábamos ID del píxel.</p>
+      <p>Hoy, en el Administrador de eventos (Events Manager), Meta habla de <b>conjuntos de datos</b>: reúnen los eventos del píxel, de la API de conversiones y de otras fuentes. Su ID es el mismo número que antes llamábamos ID del píxel.</p>
 
       <h2>¿Qué es la API de conversiones de Meta y en qué se diferencia del píxel?</h2>
-      <p>La <b>API de conversiones de Meta</b> (Conversions API o CAPI) es una conexión directa entre tu servidor, tu tienda online o tu CRM y Meta. Manda los mismos eventos que el píxel, pero sin pasar por el navegador del usuario. Por eso no la frenan los bloqueadores de anuncios ni las restricciones de cookies.</p>
+      <p>La <b>API de conversiones de Meta</b> (Conversions API o CAPI) es una conexión directa entre tu servidor, tu tienda online o tu CRM y Meta. Manda los mismos eventos que el píxel sin pasar por el navegador, así que no la frenan los bloqueadores ni las cookies.</p>
       <div class="table-wrap"><table>
         <thead><tr><th></th><th>Píxel de Meta</th><th>API de conversiones</th></tr></thead>
         <tbody>
@@ -128,7 +128,7 @@
       <p>GTM web solo instala el píxel. Para la API de conversiones por esta vía hace falta un contenedor de servidor (server-side GTM), con su propio hosting.</p>
 
       <h3>Opción 5: integraciones de socios y la configuración de Meta</h3>
-      <p>Shopify, Wix, WooCommerce y muchos CRM tienen integración directa: la elegís en <b>Conectar datos</b> y la plataforma configura píxel y API juntos. Además, desde 2026 Meta ofrece una <b>configuración de la API de conversiones habilitada por Meta</b> para sitios web, que se activa con pocos clics y sin costo. Si ya usás una integración de socio, no cambia nada.</p>
+      <p>Shopify, Wix, WooCommerce y muchos CRM tienen integración directa: la elegís en <b>Conectar datos</b> y configura píxel y API juntos. Desde 2026, Meta también ofrece una <b>configuración de la API de conversiones habilitada por Meta</b> para webs, sin costo y en pocos clics.</p>
 
 
       <h2>¿Qué eventos estándar conviene medir en una pyme?</h2>
@@ -143,10 +143,10 @@
           <tr><td>Tienda online</td><td>ViewContent, AddToCart, InitiateCheckout, Purchase</td><td>Purchase</td></tr>
         </tbody>
       </table></div>
-      <p>Un aprendizaje de nuestro trabajo: elegir el evento equivocado sale caro. En el <a href="/casos">caso de Tu Préstamo Genial</a>, la campaña buscaba a quien escribiera más barato, no a quien calificara para un crédito. Medir y optimizar hacia la consulta que de verdad sirve fue parte de lo que cambió los resultados. Si tus campañas van a WhatsApp, te sirve leer <a href="/blog/campanas-whatsapp-vs-formularios-meta">cuándo conviene una campaña a WhatsApp y cuándo un formulario</a>, porque cambia qué se mide con el píxel y qué mide Meta por su cuenta.</p>
+      <p>Elegir mal el evento sale caro. En el <a href="/casos">caso de Tu Préstamo Genial</a>, la campaña buscaba a quien escribiera más barato, no a quien calificara para un crédito. Si tus campañas van a WhatsApp, te sirve leer <a href="/blog/campanas-whatsapp-vs-formularios-meta">cuándo conviene una campaña a WhatsApp y cuándo un formulario</a>, porque cambia qué se mide con el píxel y qué mide Meta por su cuenta.</p>
 
       <h2>¿Qué es la deduplicación y cómo se configura?</h2>
-      <p>La <b>deduplicación</b> es el proceso por el que Meta detecta que un evento del píxel y uno de la API de conversiones son la misma acción, y cuenta uno solo. Sin deduplicación, cada compra o consulta aparece dos veces y tus reportes mienten.</p>
+      <p>La <b>deduplicación</b> es el proceso por el que Meta detecta que un evento del píxel y uno de la API son la misma acción, y cuenta uno solo. Sin ella, cada consulta aparece dos veces.</p>
       <p>Para que funcione, los dos envíos tienen que compartir:</p>
       <ul>
         <li><b>El mismo nombre de evento</b>: <code>Lead</code> en el píxel y <code>Lead</code> en el servidor. Si uno dice "Lead" y otro "Formulario", no se cruzan.</li>
@@ -167,7 +167,7 @@
       <p>Desactivá el bloqueador de anuncios mientras probás. También sirve la extensión <b>Meta Pixel Helper</b>, disponible para Chrome y Edge, que muestra qué eventos dispara cada página.</p>
 
       <h2>¿Qué es la calidad de coincidencia de eventos y cómo subirla?</h2>
-      <p>La <b>calidad de coincidencia de eventos</b> (Event Match Quality) es una puntuación de 1 a 10 que indica qué tan bien la información de cliente que mandás permite asociar un evento con una cuenta de Facebook o Instagram. Solo los eventos que coinciden sirven para atribuir y optimizar. Meta recomienda apuntar a 6 o más. La ves en el resumen del conjunto de datos, haciendo clic en cada evento.</p>
+      <p>La <b>calidad de coincidencia de eventos</b> (Event Match Quality) es una puntuación de 1 a 10 que indica qué tan bien la información de cliente que mandás permite asociar un evento con una cuenta de Facebook o Instagram. Solo los eventos que coinciden sirven para atribuir y optimizar. Meta recomienda apuntar a 6 o más. La ves en el resumen del conjunto de datos.</p>
       <p>Para subirla:</p>
       <ul>
         <li>Activá la coincidencia avanzada automática.</li>
