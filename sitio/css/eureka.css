@@ -475,8 +475,8 @@ section.dark .head h2::before,.contact .head h2::before{background:radial-gradie
 .hero .wm{left:50%;bottom:-.48em;transform:translateX(-50%);font-size:clamp(148px,34vw,520px);color:rgba(174,246,255,.16)}
 .hero .in,#servicios .in,section.dark .in,.page-hero .in{position:relative;z-index:1}
 #servicios{position:relative;overflow:hidden;isolation:isolate}
-#servicios .wm{right:-.08em;top:18px;font-size:clamp(140px,22vw,300px);color:rgba(4,41,138,.055)}
-section.dark .wm{right:-.12em;bottom:-.62em;font-size:clamp(96px,14vw,200px);color:rgba(174,246,255,.07)}
+#servicios .wm{right:-.08em;top:18px;font-size:clamp(140px,22vw,300px);color:rgba(4,41,138,.03)}
+section.dark .wm{right:-.06em;bottom:-.14em;font-size:clamp(96px,14vw,200px);color:rgba(174,246,255,.07)}
 .page-hero{position:relative;overflow:hidden;isolation:isolate}
 .page-hero .wm{left:-.04em;bottom:-.34em;font-size:clamp(120px,22vw,300px);color:rgba(4,41,138,.06)}
 
@@ -490,13 +490,13 @@ footer{background-color:var(--negro);background-image:url("../img/grain.png"),li
 
 .services.bento{grid-template-columns:minmax(0,1.2fr) minmax(0,.9fr);align-items:stretch}
 .services.bento .svc{grid-template-columns:minmax(0,1fr);height:100%}
-.services.bento .svc:first-child{grid-row:span 2}
+.services.bento .svc:first-child{grid-column:1/-1;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);height:auto}
 .services.bento .svc-ink{background:radial-gradient(80% 55% at 100% 0%,rgba(174,246,255,.38),transparent 62%),var(--azul);color:#fff;box-shadow:0 24px 50px -32px rgba(4,41,138,.8)}
 .svc-ink h3,.svc-ink li,.svc-ink .more{color:#fff}
 .svc-ink .d p{color:rgba(255,255,255,.82)}
 .svc-ink li{border-bottom-color:rgba(255,255,255,.2)}
 .svc-ink li span{color:#aef6ff}
-@media (max-width:900px){.services.bento{grid-template-columns:minmax(0,1fr)}.services.bento .svc:first-child{grid-row:auto}}
+@media (max-width:900px){.services.bento{grid-template-columns:minmax(0,1fr)}.services.bento .svc:first-child{grid-column:auto;grid-template-columns:minmax(0,1fr)}}
 
 .sum-metric{display:grid;justify-items:end;gap:4px;min-width:0}
 .sum-metric .metric{color:var(--azul);font-size:clamp(34px,3.4vw,48px)}
