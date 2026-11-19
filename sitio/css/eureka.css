@@ -587,3 +587,4 @@ section.dark .step::before{background:#aef6ff;color:var(--azul);box-shadow:0 0 0
 .post h2,.post h3{font-size:22px;font-weight:500;line-height:1.2;margin:0}
 .post p{margin:0;color:var(--tinta-2);font-size:16px}
 .post small{color:var(--tinta-3)}
+.art-hero .hero-t{justify-items:start}
