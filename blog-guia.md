@@ -15,3 +15,6 @@ Reglas que salen de las correcciones de Tomás. Valen para todo artículo nuevo 
 
 ## Vocabulario
 - Para niveles de experiencia o de precio usá **junior, semi-senior y senior**, nunca básico, estándar, premium, intermedio o completo.
+
+## Formato
+- No va la caja de autor al final del artículo (foto + "socio de Eureka..."). Alcanza con la firma "Por ..." arriba.
