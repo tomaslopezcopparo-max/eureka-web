@@ -90,3 +90,9 @@ document.querySelectorAll('[role="tablist"]').forEach(list=>{
     em.classList.add("done");
   })();
 })();
+
+// Casos como lomos de libros: se abre uno y el resto queda parado al costado
+document.querySelectorAll(".sb").forEach(g=>{const cs=[...g.querySelectorAll(".sb-c")];
+  const open=c=>cs.forEach(x=>{const on=x===c;x.classList.toggle("on",on);x.setAttribute("aria-expanded",on)});
+  cs.forEach(c=>{c.addEventListener("click",()=>{if(!c.classList.contains("on"))open(c)});
+    c.addEventListener("keydown",e=>{if(e.target===c&&(e.key==="Enter"||e.key===" ")){e.preventDefault();open(c)}})})});
