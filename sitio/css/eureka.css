@@ -619,3 +619,28 @@ section.dark .step::before{background:#aef6ff;color:var(--azul);box-shadow:0 0 0
 .post p{margin:0;color:var(--tinta-2);font-size:16px}
 .post small{color:var(--tinta-3)}
 .art-hero .hero-t{justify-items:start}
+
+/* Herramientas: calculadora de presupuesto */
+.calc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:start}
+.calc-form .f small{font-size:13px;color:var(--tinta-3);line-height:1.4}
+.calc-in{display:flex;align-items:center;background:var(--fondo);border-radius:var(--r-s);border:1.5px solid transparent}
+.calc-in:focus-within{border-color:var(--azul)}
+.calc-in span{padding:0 12px;color:var(--tinta-3);font-size:15px}
+.calc-in span:first-child{padding-right:0}
+.f .calc-in input{background:transparent;border:0;min-width:0;font-variant-numeric:tabular-nums}
+.f .calc-in input:focus{border:0}
+.calc-out{background:var(--azul);color:#fff;border-radius:var(--r);padding:clamp(22px,3vw,36px);display:grid;gap:22px;position:sticky;top:96px}
+.calc-out .eyebrow{color:var(--azul)}
+.calc-main b{display:block;font-size:clamp(40px,5vw,64px);font-weight:500;letter-spacing:-.04em;line-height:1;margin-top:8px;font-variant-numeric:tabular-nums}
+.calc-main p{margin:8px 0 0;color:rgba(255,255,255,.75)}
+.calc-kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0}
+.calc-kpis div{background:rgba(255,255,255,.08);border-radius:var(--r-s);padding:14px}
+.calc-kpis dt{font-size:13px;color:rgba(255,255,255,.7)}
+.calc-kpis dd{margin:6px 0 0;font-size:22px;font-weight:500;font-variant-numeric:tabular-nums}
+.calc-tax table{width:100%;border-collapse:collapse;margin-top:8px;font-size:15px}
+.calc-tax td{padding:8px 0;border-bottom:1px solid rgba(255,255,255,.15)}
+.calc-tax td:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.calc-tax .tot td{font-weight:500;border-bottom:0;padding-top:12px}
+.calc-note{margin:0;font-size:14px;line-height:1.5;color:rgba(255,255,255,.8)}
+.calc-out .btn{justify-content:center;background:#fff;color:var(--azul)}
+@media (max-width:900px){.calc{grid-template-columns:minmax(0,1fr)}.calc-out{position:static}}
