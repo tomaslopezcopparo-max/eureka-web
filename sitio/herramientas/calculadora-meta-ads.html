@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Calculadora de presupuesto para Meta Ads · Eureka</title>
+<meta name="description" content="Calculadora gratis de presupuesto para Meta Ads: cargá tus ventas, ticket, margen y tasa de cierre y obtené leads, costo por lead máximo e inversión con impuestos.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Eureka">
+<meta property="og:locale" content="es_AR">
+<meta property="og:title" content="Calculadora de presupuesto para Meta Ads · Eureka">
+<meta property="og:description" content="Calculadora gratis de presupuesto para Meta Ads: cargá tus ventas, ticket, margen y tasa de cierre y obtené leads, costo por lead máximo e inversión con impuestos.">
+<meta property="og:url" content="https://eurekacrea.com.ar/herramientas/calculadora-meta-ads">
+<link rel="canonical" href="https://eurekacrea.com.ar/herramientas/calculadora-meta-ads">
+<meta property="og:image" content="https://eurekacrea.com.ar/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../css/eureka.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "Calculadora de presupuesto para Meta Ads", "url": "https://eurekacrea.com.ar/herramientas/calculadora-meta-ads", "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "inLanguage": "es-AR", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "ARS"}, "publisher": {"@id": "https://eurekacrea.com.ar/#org"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://eurekacrea.com.ar/"}, {"@type": "ListItem", "position": 2, "name": "Calculadora de Meta Ads", "item": "https://eurekacrea.com.ar/herramientas/calculadora-meta-ads"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cómo se calcula el presupuesto de Meta Ads?", "acceptedAnswer": {"@type": "Answer", "text": "Se divide la cantidad de ventas que querés por tu tasa de cierre para saber cuántos leads necesitás. Después se calcula cuánto podés pagar por cada lead a partir de tu ticket, tu margen y la parte del margen que querés destinar a pauta. Leads por costo por lead máximo da el presupuesto mensual."}}, {"@type": "Question", "name": "¿La calculadora incluye impuestos?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Si pagás con tarjeta en pesos suma el IVA del 21% y la percepción del 30% de la RG 5617, y podés cargar la percepción de Ingresos Brutos de tu provincia. Las alícuotas cambian: confirmalas con tu contador."}}, {"@type": "Question", "name": "¿Qué pasa si no sé mi tasa de cierre?", "acceptedAnswer": {"@type": "Answer", "text": "Usá un valor prudente para el primer mes y empezá a medirla: anotá cada consulta que entra y si terminó en venta. Con tus números reales, volvé a hacer la cuenta."}}, {"@type": "Question", "name": "¿Qué es el mínimo para la fase de aprendizaje?", "acceptedAnswer": {"@type": "Answer", "text": "Es el presupuesto diario que necesita un conjunto de anuncios para juntar unos 50 resultados en 7 días, que es cuando Meta suele salir de la fase de aprendizaje. Se calcula como costo por lead × 50 ÷ 7."}}]}]}
+</script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="r+4GfnwhM1ZCwHZTbjADGQ" async></script>
+</head>
+<body>
+<header class="top">
+  <div class="in">
+    <a class="logo" href="/" aria-label="Eureka, inicio">eureka</a>
+    <nav class="nav" aria-label="Principal">
+      <a href="/servicios/anuncios">Anuncios</a>
+      <a href="/servicios/contenido">Contenido</a>
+      <a href="/servicios/diseno">Diseño</a>
+      <a href="/precios">Planes</a>
+      <a href="/casos">Casos</a>
+      <a href="/blog">Blog</a>
+    </nav>
+    <a class="btn btn-p" href="/#contacto">Diagnóstico gratis</a>
+  </div>
+</header>
+
+<main>
+<section class="page-hero art-hero">
+  <div class="in">
+    <div class="hero-t">
+      <nav class="crumbs" aria-label="Ruta"><a href="/">Inicio</a><span>/</span><span>Calculadora de Meta Ads</span></nav>
+      <h1>Calculadora de presupuesto para <span class="key">Meta Ads</span>.</h1>
+      <p class="lede">Cargá cuántas ventas querés, tu ticket, tu margen y tu tasa de cierre. Te devolvemos cuántos leads necesitás, cuánto podés pagar por cada uno y cuánto invertir por mes, con impuestos.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="in">
+    <div class="calc">
+      <form class="box calc-form" id="calc" novalidate>
+        <span class="eyebrow">Tu negocio</span>
+        <div class="f"><label for="c-ventas">Ventas por mes que querés de los anuncios</label><div class="calc-in"><input id="c-ventas" type="number" inputmode="decimal" min="0" step="1" value="10"></div></div>
+        <div class="f"><label for="c-ticket">Ticket promedio por venta</label><div class="calc-in"><span>$</span><input id="c-ticket" type="number" inputmode="decimal" min="0" step="1000" value="500000"></div></div>
+        <div class="f"><label for="c-margen">Margen bruto</label><div class="calc-in"><input id="c-margen" type="number" inputmode="decimal" min="0" step="1" value="40"><span>%</span></div></div>
+        <div class="f"><label for="c-share">Parte del margen que destinás a pauta</label><div class="calc-in"><input id="c-share" type="number" inputmode="decimal" min="0" step="1" value="30"><span>%</span></div><small>Cuánto de lo que ganás por venta estás dispuesto a gastar para conseguirla.</small></div>
+        <div class="f"><label for="c-cierre">Tasa de cierre</label><div class="calc-in"><input id="c-cierre" type="number" inputmode="decimal" min="0" step="0.5" value="10"><span>%</span></div><small>De cada 100 consultas, cuántas terminan en venta.</small></div>
+        <span class="eyebrow">Impuestos</span>
+        <div class="f"><label for="c-pago">Cómo pagás Meta</label><select id="c-pago"><option value="ars" selected>Tarjeta en pesos (IVA 21% + percepción 30%)</option><option value="usd">Sin impuestos argentinos (dólares propios u otro medio)</option></select></div>
+        <div class="f"><label for="c-iibb">Percepción de Ingresos Brutos de tu provincia</label><div class="calc-in"><input id="c-iibb" type="number" inputmode="decimal" min="0" step="0.5" value="0"><span>%</span></div><small>En Santa Fe, 3% o 4,5% según el servicio. Confirmalo con tu contador.</small></div>
+      </form>
+
+      <div class="calc-out" aria-live="polite">
+        <div class="calc-main">
+          <span class="eyebrow">Presupuesto mensual de pauta</span>
+          <b id="o-mes">$0</b>
+          <p id="o-dia">$0 por día</p>
+        </div>
+        <dl class="calc-kpis">
+          <div><dt>Leads que necesitás</dt><dd id="o-leads">0</dd></div>
+          <div><dt>Costo por venta máximo</dt><dd id="o-cpv">$0</dd></div>
+          <div><dt>Costo por lead máximo</dt><dd id="o-cpl">$0</dd></div>
+          <div><dt>Mínimo diario para la fase de aprendizaje</dt><dd id="o-min">$0</dd></div>
+        </dl>
+        <div class="calc-tax">
+          <span class="eyebrow">Lo que sale de tu cuenta</span>
+          <table><tbody>
+            <tr><td>Anuncios</td><td id="t-ads">$0</td></tr>
+            <tr><td>IVA (21%)</td><td id="t-iva">$0</td></tr>
+            <tr><td>Percepción Ganancias / Bienes Personales (30%)</td><td id="t-perc">$0</td></tr>
+            <tr><td>Percepción de Ingresos Brutos</td><td id="t-iibb">$0</td></tr>
+            <tr class="tot"><td>Total por mes</td><td id="t-tot">$0</td></tr>
+          </tbody></table>
+        </div>
+        <p class="calc-note" id="o-note"></p>
+        <a class="btn btn-p btn-lg" id="o-wa" href="https://wa.me/5493415014376" target="_blank" rel="noopener">Revisemos estos números juntos <span class="arr">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="in">
+    <article class="prose">
+      <h2>Cómo calcula la calculadora</h2>
+      <ol>
+        <li><b>Leads que necesitás:</b> ventas objetivo ÷ tasa de cierre.</li>
+        <li><b>Costo por venta máximo:</b> ticket × margen bruto × parte del margen que destinás a pauta.</li>
+        <li><b>Costo por lead máximo:</b> costo por venta máximo × tasa de cierre.</li>
+        <li><b>Presupuesto mensual:</b> leads × costo por lead máximo. El diario es el mensual ÷ 30.</li>
+        <li><b>Mínimo para la fase de aprendizaje:</b> costo por lead × 50 ÷ 7, por conjunto de anuncios.</li>
+      </ol>
+      <p>El costo por lead que da la calculadora es un techo: lo máximo que podés pagar para que los números cierren. El paso a paso, con un ejemplo y los impuestos explicados, está en <a href="/blog/cuanto-invertir-en-meta-ads">cuánto invertir en Meta Ads</a>.</p>
+
+      <h2>Preguntas frecuentes</h2>
+      <div class="faq">
+        <details><summary>¿Cómo se calcula el presupuesto de Meta Ads?</summary><p>Se divide la cantidad de ventas que querés por tu tasa de cierre para saber cuántos leads necesitás. Después se calcula cuánto podés pagar por cada lead a partir de tu ticket, tu margen y la parte del margen que querés destinar a pauta. Leads por costo por lead máximo da el presupuesto mensual.</p></details>
+        <details><summary>¿La calculadora incluye impuestos?</summary><p>Sí. Si pagás con tarjeta en pesos suma el IVA del 21% y la percepción del 30% de la RG 5617, y podés cargar la percepción de Ingresos Brutos de tu provincia. Las alícuotas cambian: confirmalas con tu contador.</p></details>
+        <details><summary>¿Qué pasa si no sé mi tasa de cierre?</summary><p>Usá un valor prudente para el primer mes y empezá a medirla: anotá cada consulta que entra y si terminó en venta. Con tus números reales, volvé a hacer la cuenta.</p></details>
+        <details><summary>¿Qué es el mínimo para la fase de aprendizaje?</summary><p>Es el presupuesto diario que necesita un conjunto de anuncios para juntar unos 50 resultados en 7 días, que es cuando Meta suele salir de la fase de aprendizaje. Se calcula como costo por lead × 50 ÷ 7.</p></details>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="in">
+    <div class="cta-block">
+      <div><h2>¿Tus anuncios cuestan más de lo que podés pagar?</h2><p>En 30 minutos revisamos tus redes y anuncios. Si no vemos oportunidad, también te lo decimos.</p></div>
+      <div class="hero-cta"><a class="btn btn-c btn-lg" href="/#contacto">Pedí tu diagnóstico <span class="arr">→</span></a><a class="btn btn-g btn-lg" href="https://wa.me/5493415014376?text=Hola%20Eureka!%20Quiero%20el%20diagn%C3%B3stico%20gratis." target="_blank" rel="noopener">WhatsApp</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="in">
+    <div><span class="logo">eureka</span><p>Agencia de marketing en Rosario y Gran Rosario.<br>+54 341 501 4376 · contacto@eurekacrea.com.ar</p></div>
+    <nav aria-label="Pie"><a href="/servicios/anuncios">Anuncios</a><a href="/servicios/contenido">Contenido</a><a href="/servicios/diseno">Diseño</a><a href="/precios">Planes</a><a href="/casos">Casos</a><a href="/blog">Blog</a><a href="/herramientas/calculadora-meta-ads">Calculadora</a><a href="/#contacto">Contacto</a></nav>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/5493415014376?text=Hola%20Eureka!%20Quiero%20el%20diagn%C3%B3stico%20gratis." target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.6a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></a>
+<script src="../js/eureka.js"></script>
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var ars=new Intl.NumberFormat('es-AR',{style:'currency',currency:'ARS',maximumFractionDigits:0});
+  var n0=new Intl.NumberFormat('es-AR',{maximumFractionDigits:0});
+  function v(id){var x=parseFloat($(id).value);return isFinite(x)&&x>0?x:0}
+  function calc(){
+    var ventas=v('c-ventas'),ticket=v('c-ticket'),margen=v('c-margen')/100,share=v('c-share')/100,cierre=v('c-cierre')/100,iibb=v('c-iibb')/100;
+    var leads=cierre?Math.ceil(ventas/cierre):0;
+    var cpv=ticket*margen*share, cpl=cpv*cierre, mes=leads*cpl, dia=mes/30, min=cpl*50/7;
+    var conImp=$('c-pago').value==='ars';
+    var iva=conImp?mes*.21:0, perc=conImp?mes*.30:0, ib=mes*iibb, tot=mes+iva+perc+ib;
+    $('o-mes').textContent=ars.format(mes); $('o-dia').textContent=ars.format(dia)+' por día';
+    $('o-leads').textContent=n0.format(leads); $('o-cpv').textContent=ars.format(cpv);
+    $('o-cpl').textContent=ars.format(cpl); $('o-min').textContent=ars.format(min);
+    $('t-ads').textContent=ars.format(mes); $('t-iva').textContent=ars.format(iva); $('t-perc').textContent=ars.format(perc);
+    $('t-iibb').textContent=ars.format(ib); $('t-tot').textContent=ars.format(tot);
+    var note='';
+    if(!leads||!cpl){note='Completá todos los datos para ver el resultado.'}
+    else if(dia<min){note='Tu presupuesto diario queda por debajo del mínimo para la fase de aprendizaje. Concentrá todo en un solo conjunto de anuncios u optimizá para un evento con más volumen, como conversaciones de WhatsApp.'}
+    else{note='Tu presupuesto diario alcanza para que un conjunto de anuncios salga de la fase de aprendizaje.'}
+    if(conImp&&mes) note+=' El IVA se recupera si sos responsable inscripto y la percepción del 30% se descuenta en tu declaración jurada.';
+    $('o-note').textContent=note;
+    var msg='Hola Eureka! Usé la calculadora de Meta Ads: quiero '+n0.format(ventas)+' ventas por mes, ticket '+ars.format(ticket)+', tasa de cierre '+(cierre*100)+'%. Me da '+ars.format(mes)+' por mes de pauta. ¿Lo revisamos?';
+    $('o-wa').href='https://wa.me/5493415014376?text='+encodeURIComponent(msg);
+  }
+  $('calc').addEventListener('input',calc); $('calc').addEventListener('change',calc);
+  $('calc').addEventListener('submit',function(e){e.preventDefault()});
+  calc();
+})();
+</script>
+</body>
+</html>
