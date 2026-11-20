@@ -10,15 +10,19 @@
 <meta property="og:locale" content="es_AR">
 <meta property="og:title" content="Agencia de marketing en Rosario · Eureka">
 <meta property="og:description" content="Diseño, redes y anuncios en Meta con un solo equipo. Pedí tu diagnóstico gratis.">
-<meta property="og:url" content="https://eureka-web-ten.vercel.app/">
-<meta property="og:image" content="https://eureka-web-ten.vercel.app/og.png">
+<meta property="og:url" content="https://eurekacrea.com.ar/">
+<link rel="canonical" href="https://eurekacrea.com.ar/">
+<meta property="og:image" content="https://eurekacrea.com.ar/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Eureka, agencia de marketing en Rosario">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
- {"@type":"ProfessionalService","name":"Eureka","description":"Agencia de marketing en Rosario: diseño, contenido en redes y pauta digital.","telephone":"+54 341 501 4376","email":"contacto@eurekacrea.com.ar","url":"https://eurekacrea.com.ar/","sameAs":["https://www.instagram.com/eurekacrea_/"],"address":{"@type":"PostalAddress","addressLocality":"Rosario","addressRegion":"Santa Fe","addressCountry":"AR"},"areaServed":["Rosario","Gran Rosario"],"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Diseño para redes sociales"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Contenido en redes y edición de reels"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Pauta digital (Meta Ads y Google Ads)"}}]},
+ {"@type":"ProfessionalService","@id":"https://eurekacrea.com.ar/#org","name":"Eureka","image":"https://eurekacrea.com.ar/og.png","description":"Agencia de marketing en Rosario: diseño, contenido en redes y pauta digital.","telephone":"+54 341 501 4376","email":"contacto@eurekacrea.com.ar","url":"https://eurekacrea.com.ar/","sameAs":["https://www.instagram.com/eurekacrea_/"],"address":{"@type":"PostalAddress","addressLocality":"Rosario","addressRegion":"Santa Fe","addressCountry":"AR"},"areaServed":["Rosario","Gran Rosario"],"founder":[{"@id":"https://eurekacrea.com.ar/#tomas-lopez"},{"@id":"https://eurekacrea.com.ar/#marco-bustamante"}],"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Diseño para redes sociales"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Contenido en redes y edición de reels"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Pauta digital (Meta Ads y Google Ads)"}}]},
+ {"@type":"Person","@id":"https://eurekacrea.com.ar/#tomas-lopez","name":"Tomás López","jobTitle":"Socio","image":"https://eurekacrea.com.ar/img/tomas-lopez.webp","worksFor":{"@id":"https://eurekacrea.com.ar/#org"}},
+ {"@type":"Person","@id":"https://eurekacrea.com.ar/#marco-bustamante","name":"Marco Bustamante","jobTitle":"Socio · Lic. en Marketing","image":"https://eurekacrea.com.ar/img/marco-bustamante.webp","worksFor":{"@id":"https://eurekacrea.com.ar/#org"}},
+ {"@type":"WebSite","@id":"https://eurekacrea.com.ar/#web","url":"https://eurekacrea.com.ar/","name":"Eureka","inLanguage":"es-AR","publisher":{"@id":"https://eurekacrea.com.ar/#org"}},
  {"@type":"FAQPage","mainEntity":[
   {"@type":"Question","name":"¿Cuánto cuesta?","acceptedAnswer":{"@type":"Answer","text":"Trabajamos con un honorario mensual según los servicios que elijas. La inversión en anuncios va aparte, a nombre de tu empresa. En el diagnóstico te pasamos un número concreto."}},
   {"@type":"Question","name":"¿En cuánto tiempo veo resultados?","acceptedAnswer":{"@type":"Answer","text":"El primer mes armamos la base: estrategia, diseño, píxel y landing. Las campañas arrancan apenas está todo listo y cada mes te mostramos resultados en una reunión."}},
@@ -30,6 +34,8 @@
 ]}
 </script>
 <meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preload" as="image" href="img/hero-rosario.webp" media="(min-width:901px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-rosario-m.webp" media="(max-width:900px)" fetchpriority="high">
 <link rel="stylesheet" href="css/eureka.css">
   <script src="https://analytics.ahrefs.com/analytics.js" data-key="r+4GfnwhM1ZCwHZTbjADGQ" async></script>
 </head>
@@ -39,13 +45,14 @@
   <div class="in">
     <a class="logo" href="#inicio" aria-label="Eureka, inicio">eureka</a>
     <nav class="nav" aria-label="Principal">
-      <a href="servicios/anuncios.html">Anuncios</a>
-      <a href="servicios/contenido.html">Contenido</a>
-      <a href="servicios/diseno.html">Diseño</a>
-      <a href="precios.html">Planes</a>
-      <a href="casos.html">Casos</a>
+      <a href="/servicios/anuncios">Anuncios</a>
+      <a href="/servicios/contenido">Contenido</a>
+      <a href="/servicios/diseno">Diseño</a>
+      <a href="/precios">Planes</a>
+      <a href="/casos">Casos</a>
+      <a href="/blog">Blog</a>
     </nav>
-    <a class="btn btn-p" href="#contacto">Diagnóstico gratis</a>
+    <a class="btn btn-p" href="https://calendar.app.google/4XZwhySeTVGDjJje6" target="_blank" rel="noopener">Agendar diagnóstico</a>
   </div>
 </header>
 
@@ -59,7 +66,7 @@
       <h1><span class="ln">Marketing</span> <span class="ln">que se mide</span> <span class="ln">en <em>ventas</em>.</span></h1>
       <p class="lede">Somos una agencia de marketing en Rosario: diseño, redes y pauta digital con un solo equipo. Hablás directo con quienes hacen el trabajo y cada mes ves qué funcionó y qué no.</p>
       <div class="hero-cta">
-        <a class="btn btn-p btn-lg" href="#contacto">Pedí tu diagnóstico gratis <span class="arr">→</span></a>
+        <a class="btn btn-p btn-lg" href="https://calendar.app.google/4XZwhySeTVGDjJje6" target="_blank" rel="noopener">Agendá tu diagnóstico gratis <span class="arr">→</span></a>
         <a class="btn btn-g btn-lg" href="#casos">Ver casos</a>
       </div>
       <p class="hero-note">Charla de 30 minutos. Si no vemos oportunidad, te lo decimos.</p>
@@ -119,7 +126,7 @@
 <section class="statement">
   <div class="in">
     <p>Primero miramos tus <span class="key">números</span>.<br>Después hablamos de piezas.</p>
-    <a class="more" href="#contacto">Pedí el diagnóstico gratis <span class="arr">→</span></a>
+    <a class="more" href="https://calendar.app.google/4XZwhySeTVGDjJje6" target="_blank" rel="noopener">Agendá el diagnóstico gratis <span class="arr">→</span></a>
   </div>
 </section>
 
@@ -129,15 +136,15 @@
     <div class="head split"><div class="head"><h2>Tres frentes, un solo <span class="key">equipo</span>.</h2></div><p class="lede">Podés contratar uno o los tres. Juntos rinden más: el diseño alimenta el contenido y el contenido alimenta los anuncios.</p></div>
     <div class="services bento">
     <article class="svc" id="diseno">
-        <div class="d"><h3>Diseño</h3><p>Sistema visual y piezas digitales para que tu marca se vea igual de bien en cada lugar.</p><a class="more" href="servicios/diseno.html">Ver servicio de diseño <span class="arr">→</span></a></div>
+        <div class="d"><h3>Diseño</h3><p>Sistema visual y piezas digitales para que tu marca se vea igual de bien en cada lugar.</p><a class="more" href="/servicios/diseno">Ver servicio de diseño <span class="arr">→</span></a></div>
         <ul><li>Manual de uso digital<span>Mes 1</span></li><li>Placas para stories y WhatsApp<span>según calendario</span></li><li>Placas para feed<span>según calendario</span></li><li>Creativos para campañas<span>según campaña</span></li><li>Kit comercial digital<span>Mes 1</span></li></ul>
     </article>
     <article class="svc" id="contenido">
-        <div class="d"><h3>Contenido en redes</h3><p>Ideas, guiones y producción de reels para comunicar de forma clara, cercana y actual.</p><a class="more" href="servicios/contenido.html">Ver servicio de contenido <span class="arr">→</span></a></div>
+        <div class="d"><h3>Contenido en redes</h3><p>Ideas, guiones y producción de reels para comunicar de forma clara, cercana y actual.</p><a class="more" href="/servicios/contenido">Ver servicio de contenido <span class="arr">→</span></a></div>
         <ul><li>Estrategia y calendario<span>mensual</span></li><li>Guiones de reels<span>según calendario</span></li><li>Edición de reels y videos<span>según calendario</span></li><li>Primera sesión de fotos<span>bonificada</span></li><li>Revisión de rendimiento<span>mensual</span></li></ul>
     </article>
     <article class="svc svc-ink" id="anuncios">
-        <div class="d"><h3>Pauta digital</h3><p>Campañas en Meta y Google que se corrigen con datos, no con opiniones.</p><a class="more" href="servicios/anuncios.html">Ver servicio de anuncios <span class="arr">→</span></a></div>
+        <div class="d"><h3>Pauta digital</h3><p>Campañas en Meta y Google que se corrigen con datos, no con opiniones.</p><a class="more" href="/servicios/anuncios">Ver servicio de anuncios <span class="arr">→</span></a></div>
         <ul><li>Auditoría, píxel y API de conversiones<span>Mes 1</span></li><li>Landing exclusiva para anuncios<span>Mes 1</span></li><li>Campañas de leads y retargeting<span>continuo</span></li><li>Testeo de creativos<span>continuo</span></li><li>Reporte y reunión de resultados<span>mensual</span></li></ul>
     </article>
     </div>
@@ -153,18 +160,19 @@
         <span class="sb-tab" aria-hidden="true"><b>71</b><span>VAN Publicidad</span></span>
         <div class="sb-in">
           <small>VAN Publicidad · Vía pública · Granadero Baigorria</small>
-          <div><h3>Nunca habían pautado. En el primer mes, <b>71 empresas</b> pidieron precio.</h3>
-          <p>Grabamos reels en sus propios carteles y lanzamos su primera campaña en Meta, con un formulario que filtra por rubro y provincia.</p>
-          <a href="casos.html#van">Ver el caso <span class="arr">→</span></a></div>
+          <div><h3><b>71 empresas</b> interesadas en sus servicios en el primer mes.</h3>
+          <p>Nunca habían hecho anuncios. Grabamos reels en sus propios carteles y lanzamos su primera campaña en Meta, con un formulario que filtra por rubro y provincia.</p>
+          <a href="/casos#van">Ver el caso <span class="arr">→</span></a></div>
         </div>
       </div>
       <div class="sb-c tpg" role="button" tabindex="0" aria-expanded="false" aria-label="Tu Préstamo Genial">
+        <div class="bgs"><video src="video/tpg-miriam.mp4" poster="img/casos/tpg-miriam.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Fragmento de otro video con influencer para Tu Préstamo Genial"></video><video src="video/tpg-flor.mp4" poster="img/casos/tpg-flor.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Fragmento del video con influencer para Tu Préstamo Genial"></video></div>
         <span class="sb-tab" aria-hidden="true"><b>2,5x</b><span>Tu Préstamo Genial</span></span>
         <div class="sb-in">
           <small>Tu Préstamo Genial · Préstamos · Jujuy</small>
-          <div><h3><b>2,5x más créditos</b> en un mes. 64 de 73 vinieron de un solo video.</h3>
-          <p>Campaña nueva a WhatsApp con video, placas y carruseles, y un video con una influencer local que la cuenta nunca había probado.</p>
-          <a href="casos.html#tpg">Ver el caso <span class="arr">→</span></a></div>
+          <div><h3>Crecimiento de <b>2,5x</b> en créditos en un mes.</h3>
+          <p>De 29 a 73 créditos con una estrategia nueva a WhatsApp: videos de influencers y UGC grabados en Jujuy.</p>
+          <a href="/casos#tpg">Ver el caso <span class="arr">→</span></a></div>
         </div>
       </div>
     </div>
@@ -198,7 +206,7 @@
         <footer><span>Revisión día 90</span>Resultados y el plan de los 90 siguientes.</footer>
       </article>
     </div>
-    <div class="p90-cta"><a class="btn btn-p btn-lg" href="#contacto">Pedí tu diagnóstico gratis <span class="arr">→</span></a><p>Cada tarea sale de lo que vemos en tu cuenta. Si un frente ya está bien, el plan se enfoca en los otros.</p></div>
+    <div class="p90-cta"><a class="btn btn-p btn-lg" href="https://calendar.app.google/4XZwhySeTVGDjJje6" target="_blank" rel="noopener">Agendá tu diagnóstico gratis <span class="arr">→</span></a><p>Cada tarea sale de lo que vemos en tu cuenta. Si un frente ya está bien, el plan se enfoca en los otros.</p></div>
   </div>
 </section>
 
@@ -210,23 +218,22 @@
       <article class="plan hot"><h3>Contenido + Anuncios</h3><p>Lo que más nos piden.</p><ul><li>Todo lo de Anuncios</li><li>Calendario y reels</li><li>Placas para feed y stories</li><li>Testeo continuo de creativos</li></ul><a class="btn btn-p" href="#contacto">Consultar</a></article>
       <article class="plan"><h3>Marca 360°</h3><p>Diseño, contenido y anuncios.</p><ul><li>Manual visual y kit comercial</li><li>Landing para anuncios</li><li>Dos reuniones de estrategia al mes</li></ul><a class="btn btn-g" href="#contacto">Consultar</a></article>
     </div>
-    <p class="fine">Lo que queda fuera del plan se cotiza antes de hacerse. <a class="more" href="precios.html">Comparar planes <span class="arr">→</span></a></p>
+    <p class="fine">Lo que queda fuera del plan se cotiza antes de hacerse. <a class="more" href="/precios">Comparar planes <span class="arr">→</span></a></p>
   </div>
 </section>
 
 <section id="nosotros" style="padding-top:0">
   <div class="in team">
     <div class="duo">
-      <figure class="person"><img src="img/tomas-lopez.webp" width="560" height="700" alt="Tomás López, socio de Eureka"><figcaption><b>Tomás López</b><small>Socio</small></figcaption></figure>
-      <figure class="person"><img src="img/marco-bustamante.webp" width="700" height="700" alt="Marco Bustamante, socio de Eureka"><figcaption><b>Marco Bustamante</b><small>Socio · Lic. en Marketing. Comunicación y contenidos</small></figcaption></figure>
+      <figure class="person"><img src="img/tomas-lopez.webp" width="560" height="700" alt="Tomás López, socio de Eureka"><figcaption><b>Tomás López</b><small>Socio · Lic. en Comercialización. Especialista en Marketing Digital</small></figcaption></figure>
+      <figure class="person"><img src="img/marco-bustamante.webp" width="560" height="700" alt="Marco Bustamante, socio de Eureka"><figcaption><b>Marco Bustamante</b><small>Socio · Lic. en Marketing. Comunicación y contenidos</small></figcaption></figure>
     </div>
     <div class="team-t">
-      <h2>Hablás con <span class="key">nosotros</span>, no con un ejecutivo de cuentas.</h2>
-      <p class="lede">Somos una agencia chica a propósito. Los socios están en cada cuenta, de la estrategia a la reunión de resultados.</p>
+      <h2>Hablás con <span class="key">quien decide</span> sobre tu marca.</h2>
+      <p class="lede">Definimos la estrategia de tu cuenta y estamos en cada reunión de resultados. No te pasamos de mano en mano.</p>
       <ul class="promises">
-        <li>Un solo canal de comunicación</li>
-        <li>Reunión de arranque y una reunión de resultados por mes</li>
-        <li>Archivos finales en tu Drive</li>
+        <li>Un solo canal de contacto, sin intermediarios</li>
+        <li>Una reunión de arranque y una de resultados por mes</li>
       </ul>
     </div>
   </div>
@@ -262,6 +269,7 @@
         <span>Email <b>contacto@eurekacrea.com.ar</b></span>
         <span>Rosario, Santa Fe</span>
       </div>
+      <a class="btn btn-p btn-lg" style="margin-top:24px" href="https://calendar.app.google/4XZwhySeTVGDjJje6" target="_blank" rel="noopener">Agendá directo en el calendario <span class="arr">→</span></a>
     </div>
     <form id="lead" novalidate>
       <div class="prog" aria-live="polite"><span class="eyebrow" id="prog-t">Paso 1 de 3 · Tu negocio</span><span class="prog-l"><i id="prog-b"></i></span></div>
@@ -326,7 +334,7 @@
 <footer>
   <div class="in">
     <div><span class="logo">eureka</span><p>Agencia de marketing en Rosario y Gran Rosario.<br>+54 341 501 4376 · contacto@eurekacrea.com.ar</p></div>
-    <nav aria-label="Pie"><a href="servicios/anuncios.html">Anuncios</a><a href="servicios/contenido.html">Contenido</a><a href="servicios/diseno.html">Diseño</a><a href="precios.html">Planes</a><a href="casos.html">Casos</a><a href="#contacto">Contacto</a><a href="https://www.instagram.com/eurekacrea_/" rel="noopener" target="_blank">Instagram</a></nav>
+    <nav aria-label="Pie"><a href="/servicios/anuncios">Anuncios</a><a href="/servicios/contenido">Contenido</a><a href="/servicios/diseno">Diseño</a><a href="/precios">Planes</a><a href="/casos">Casos</a><a href="/blog">Blog</a><a href="/herramientas/calculadora-meta-ads">Calculadora</a><a href="#contacto">Contacto</a><a href="https://www.instagram.com/eurekacrea_/" rel="noopener" target="_blank">Instagram</a></nav>
   </div>
 </footer>
 

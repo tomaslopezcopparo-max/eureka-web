@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Píxel de Meta y API de conversiones: guía 2026 · Eureka</title>
+<meta name="description" content="Cómo instalar el píxel de Meta y la API de conversiones paso a paso: manual, Tienda Nube, WordPress o GTM, eventos para pymes, deduplicación y pruebas.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Eureka">
+<meta property="og:locale" content="es_AR">
+<meta property="og:title" content="Píxel de Meta y API de conversiones: guía 2026">
+<meta property="og:description" content="Cómo instalar el píxel de Meta y la API de conversiones paso a paso: manual, Tienda Nube, WordPress o GTM, eventos para pymes, deduplicación y pruebas.">
+<meta property="og:url" content="https://eurekacrea.com.ar/blog/pixel-de-meta-api-de-conversiones">
+<link rel="canonical" href="https://eurekacrea.com.ar/blog/pixel-de-meta-api-de-conversiones">
+<meta property="og:image" content="https://eurekacrea.com.ar/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../css/eureka.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"BlogPosting","headline":"Píxel de Meta y API de conversiones: cómo instalarlos paso a paso","description":"Cómo instalar el píxel de Meta y la API de conversiones paso a paso: manual, Tienda Nube, WordPress o GTM, eventos para pymes, deduplicación y pruebas.","url":"https://eurekacrea.com.ar/blog/pixel-de-meta-api-de-conversiones","mainEntityOfPage":"https://eurekacrea.com.ar/blog/pixel-de-meta-api-de-conversiones","inLanguage":"es-AR","datePublished":"2026-11-18","dateModified":"2026-11-18","image":"https://eurekacrea.com.ar/og.png","author":{"@type":"Person","@id":"https://eurekacrea.com.ar/#tomas-lopez","name":"Tomás López"},"publisher":{"@id":"https://eurekacrea.com.ar/#org"}},
+ {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://eurekacrea.com.ar/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://eurekacrea.com.ar/blog"},{"@type":"ListItem","position":3,"name":"Píxel de Meta y API de conversiones","item":"https://eurekacrea.com.ar/blog/pixel-de-meta-api-de-conversiones"}]},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"¿El píxel de Facebook y el píxel de Meta son lo mismo?","acceptedAnswer":{"@type":"Answer","text":"Sí. Es la misma herramienta con otro nombre. Hoy, dentro del Administrador de eventos, Meta lo muestra como un conjunto de datos, que agrupa los eventos del píxel y los de la API de conversiones."}},
+  {"@type":"Question","name":"¿Necesito la API de conversiones si ya tengo el píxel?","acceptedAnswer":{"@type":"Answer","text":"Si invertís en anuncios con objetivo de ventas o de clientes potenciales, sí. El píxel depende del navegador y pierde eventos por bloqueadores y cookies. La API de conversiones los manda desde el servidor y completa lo que falta."}},
+  {"@type":"Question","name":"¿Cuánto tarda en verse un evento en el Administrador de eventos?","acceptedAnswer":{"@type":"Answer","text":"En la pestaña Probar eventos aparece casi en tiempo real. En el resumen general puede tardar más. Si no ves nada después de unos minutos, revisá bloqueadores de anuncios y que estés mirando el conjunto de datos correcto."}},
+  {"@type":"Question","name":"¿Puedo tener el píxel instalado dos veces?","acceptedAnswer":{"@type":"Answer","text":"No conviene. Si el mismo píxel está en el código del sitio y también en un plugin o en Google Tag Manager, cada evento se cuenta dos veces. Elegí un solo método por píxel y desactivá el resto."}}
+ ]}
+]}
+</script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="r+4GfnwhM1ZCwHZTbjADGQ" async></script>
+</head>
+<body>
+<header class="top">
+  <div class="in">
+    <a class="logo" href="/" aria-label="Eureka, inicio">eureka</a>
+    <nav class="nav" aria-label="Principal">
+      <a href="/servicios/anuncios">Anuncios</a>
+      <a href="/servicios/contenido">Contenido</a>
+      <a href="/servicios/diseno">Diseño</a>
+      <a href="/precios">Planes</a>
+      <a href="/casos">Casos</a>
+      <a href="/blog" aria-current="page">Blog</a>
+    </nav>
+    <a class="btn btn-p" href="https://calendar.app.google/4XZwhySeTVGDjJje6" target="_blank" rel="noopener">Agendar diagnóstico</a>
+  </div>
+</header>
+
+<main>
+<section class="page-hero art-hero">
+  <div class="in">
+    <div class="hero-t">
+      <nav class="crumbs" aria-label="Ruta"><a href="/">Inicio</a><span>/</span><a href="/blog">Blog</a><span>/</span><span>Píxel de Meta y API de conversiones</span></nav>
+      <h1>Píxel de Meta y API de conversiones: cómo instalarlos paso a paso</h1>
+      <p class="lede">La guía que usamos con nuestros clientes: qué es cada herramienta, cómo instalarla según tu web, qué eventos medir en una pyme y cómo comprobar que todo funciona.</p>
+      <p class="art-meta"><time datetime="2026-11-18">18 de noviembre de 2026</time><span>·</span><span>9 min de lectura</span></p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="in">
+    <article class="prose">
+      <div class="tldr"><p><b>Respuesta corta:</b> el píxel de Meta es un código que mide desde el navegador lo que hace la gente en tu web después de ver un anuncio. La API de conversiones manda esos mismos eventos desde tu servidor o tu plataforma, así no se pierden por bloqueadores o cookies. Lo recomendable es usar los dos, conectados al mismo conjunto de datos y con deduplicación, y probarlos con la herramienta Probar eventos antes de lanzar campañas.</p></div>
+
+
+      <h2>¿Qué es el píxel de Meta?</h2>
+      <p>El <b>píxel de Meta</b> (antes píxel de Facebook) es un fragmento de código JavaScript que se instala en tu sitio web y le avisa a Meta cada vez que alguien hace algo importante: entra a una página, ve un producto, completa un formulario o compra. A cada una de esas acciones se la llama <b>evento</b>.</p>
+      <p>Con esos eventos Meta mide qué trajo cada anuncio, arma públicos para retargeting y aprende a quién mostrarle tus anuncios. Si el píxel mide mal, la campaña optimiza a ciegas.</p>
+      <p>Hoy, en el Administrador de eventos (Events Manager), Meta habla de <b>conjuntos de datos</b>: reúnen los eventos del píxel, de la API de conversiones y de otras fuentes. Su ID es el mismo número que antes llamábamos ID del píxel.</p>
+
+      <h2>¿Qué es la API de conversiones de Meta y en qué se diferencia del píxel?</h2>
+      <p>La <b>API de conversiones de Meta</b> (Conversions API o CAPI) es una conexión directa entre tu servidor, tu tienda online o tu CRM y Meta. Manda los mismos eventos que el píxel sin pasar por el navegador, así que no la frenan los bloqueadores ni las cookies.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th></th><th>Píxel de Meta</th><th>API de conversiones</th></tr></thead>
+        <tbody>
+          <tr><td>Desde dónde envía</td><td>El navegador del visitante</td><td>Tu servidor, plataforma o CRM</td></tr>
+          <tr><td>Bloqueadores y cookies</td><td>Lo afectan</td><td>No lo afectan</td></tr>
+          <tr><td>Instalación</td><td>Simple: código, plugin o integración</td><td>Simple con integración; técnica si es a medida</td></tr>
+          <tr><td>Eventos fuera de la web</td><td>No</td><td>Sí (por ejemplo, una venta cerrada en el local)</td></tr>
+          <tr><td>Datos para la coincidencia</td><td>Los que tome el navegador</td><td>Email, teléfono y otros datos con hash</td></tr>
+        </tbody>
+      </table></div>
+      <p>No son excluyentes. Meta recomienda usar las dos y que se complementen.</p>
+
+      <h2>¿Cómo instalar el píxel de Facebook paso a paso?</h2>
+      <p>Primero se crea el conjunto de datos. Necesitás acceso de administrador al portafolio comercial de tu empresa.</p>
+      <ol>
+        <li>Entrá al <b>Administrador de eventos</b> desde Meta Business Suite y revisá arriba que estés en el portafolio comercial correcto.</li>
+        <li>Hacé clic en <b>Conectar datos</b>, elegí <b>Web</b> y seguí.</li>
+        <li>Poné un nombre claro, por ejemplo "Nombre de la empresa · Web", y creá el conjunto de datos.</li>
+        <li>Meta te ofrece formas de conectarlo: integración de un socio (Tienda Nube, WordPress, Shopify y otras), instalar el código manualmente o configurar la API de conversiones. Elegí según tu caso, como vemos abajo.</li>
+        <li>En la pestaña <b>Configuración</b> del conjunto de datos copiá el ID y activá la <b>coincidencia avanzada automática</b>, que suma datos como el email cuando el usuario los completa en un formulario.</li>
+        <li>Asigná el conjunto de datos a tu cuenta publicitaria, así podés elegirlo al armar las campañas.</li>
+      </ol>
+
+      <h3>Opción 1: instalación manual en el código</h3>
+      <ol>
+        <li>Elegí <b>Instalar el código manualmente</b> y copiá el código base.</li>
+        <li>Pegalo dentro de la etiqueta <code>&lt;head&gt;</code> de todas las páginas del sitio. Con eso ya mide <code>PageView</code>.</li>
+        <li>Agregá los eventos donde corresponda. Por ejemplo, en la página de "gracias" de un formulario: <code>fbq('track', 'Lead');</code></li>
+      </ol>
+      <p>Para la API manual, generás un token de acceso en <b>Configuración</b> y un desarrollador programa el envío desde tu servidor.</p>
+
+      <h3>Opción 2: Tienda Nube</h3>
+      <ol>
+        <li>En el administrador de Tienda Nube, entrá a <b>Instagram y Facebook</b> y hacé clic en <b>Conectar con Meta</b> (si ya estaba conectado, en <b>Editar conexión</b>).</li>
+        <li>Elegí tu página, cuenta publicitaria, catálogo, píxel y portafolio comercial.</li>
+        <li>Dejá activo el permiso de acceso a anuncios y estadísticas, y verificá el dominio de la tienda.</li>
+      </ol>
+      <p>Con esa conexión, Tienda Nube activa la API de conversiones sola. Según su centro de ayuda, por ahora envía por API los eventos Agregar al carrito, Agregar información de pago y Comprar. Ojo: no es compatible con la API de conversiones Gateway de Meta. Si tenés las dos activas, hay que desconectar el Gateway.</p>
+
+      <h3>Opción 3: WordPress</h3>
+      <ol>
+        <li>Instalá el plugin oficial <b>Meta pixel for WordPress</b>, publicado por Facebook en el directorio de WordPress.</li>
+        <li>Conectalo con tu cuenta y elegí el conjunto de datos que creaste.</li>
+        <li>Revisá que tenga activa la API de conversiones: el plugin la incluye y manda eventos como Lead, ViewContent, AddToCart, InitiateCheckout y Purchase.</li>
+      </ol>
+      <p>Si tu tema ya tiene un campo para el ID del píxel, no lo completes además del plugin: lo instalarías dos veces.</p>
+
+      <h3>Opción 4: Google Tag Manager</h3>
+      <ol>
+        <li>En tu contenedor de GTM creá una etiqueta nueva con la plantilla de la comunidad para el píxel de Meta (o una etiqueta HTML personalizada con el código base).</li>
+        <li>Pegá el ID del conjunto de datos y dispará la etiqueta en todas las páginas.</li>
+        <li>Creá una etiqueta por evento (Lead, Contact, Schedule) con su activador: envío de formulario, clic en el botón de WhatsApp o visita a la página de gracias.</li>
+        <li>Publicá el contenedor y probá con el modo vista previa de GTM.</li>
+      </ol>
+      <p>GTM web solo instala el píxel. Para la API de conversiones por esta vía hace falta un contenedor de servidor (server-side GTM), con su propio hosting.</p>
+
+      <h3>Opción 5: integraciones de socios y la configuración de Meta</h3>
+      <p>Shopify, Wix, WooCommerce y muchos CRM tienen integración directa: la elegís en <b>Conectar datos</b> y configura píxel y API juntos. Desde 2026, Meta también ofrece una <b>configuración de la API de conversiones habilitada por Meta</b> para webs, sin costo y en pocos clics.</p>
+
+
+      <h2>¿Qué eventos estándar conviene medir en una pyme?</h2>
+      <p>Los <b>eventos estándar</b> son nombres fijos que Meta entiende sin configuración extra, como Lead o Purchase. Preferilos a los personalizados y optimizá al paso más cercano a la venta que tenga volumen.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Rubro</th><th>Eventos recomendados</th><th>Para optimizar</th></tr></thead>
+        <tbody>
+          <tr><td>Concesionarias y talleres</td><td>ViewContent (ficha de unidad), Contact (clic a WhatsApp), Lead (formulario), Schedule (turno)</td><td>Lead o Schedule</td></tr>
+          <tr><td>Financieras</td><td>Contact, Lead, CompleteRegistration (solicitud enviada)</td><td>Lead calificado</td></tr>
+          <tr><td>Salud</td><td>Contact, Schedule</td><td>Schedule</td></tr>
+          <tr><td>Servicios B2B</td><td>Contact, Lead</td><td>Lead</td></tr>
+          <tr><td>Tienda online</td><td>ViewContent, AddToCart, InitiateCheckout, Purchase</td><td>Purchase</td></tr>
+        </tbody>
+      </table></div>
+      <p>Elegir mal el evento sale caro. En el <a href="/casos">caso de Tu Préstamo Genial</a>, la campaña buscaba a quien escribiera más barato, no a quien calificara para un crédito. Si tus campañas van a WhatsApp, te sirve leer <a href="/blog/campanas-whatsapp-vs-formularios-meta">cuándo conviene una campaña a WhatsApp y cuándo un formulario</a>, porque cambia qué se mide con el píxel y qué mide Meta por su cuenta.</p>
+
+      <h2>¿Qué es la deduplicación y cómo se configura?</h2>
+      <p>La <b>deduplicación</b> es el proceso por el que Meta detecta que un evento del píxel y uno de la API son la misma acción, y cuenta uno solo. Sin ella, cada consulta aparece dos veces.</p>
+      <p>Para que funcione, los dos envíos tienen que compartir:</p>
+      <ul>
+        <li><b>El mismo nombre de evento</b>: <code>Lead</code> en el píxel y <code>Lead</code> en el servidor. Si uno dice "Lead" y otro "Formulario", no se cruzan.</li>
+        <li><b>El mismo ID de evento</b>: el <code>eventID</code> del píxel tiene que ser idéntico al <code>event_id</code> de la API. Por ejemplo: <code>fbq('track', 'Lead', {}, {eventID: 'form-123'});</code></li>
+        <li><b>El mismo conjunto de datos</b> y una ventana de 48 horas: si llegan al mismo ID dentro de ese plazo, Meta descarta el duplicado.</li>
+      </ul>
+      <p>Las integraciones de socios y el plugin de WordPress generan ese ID solos. En una instalación a medida, pedíselo al desarrollador.</p>
+
+      <h2>¿Cómo probar el píxel con Probar eventos?</h2>
+      <ol>
+        <li>En el Administrador de eventos, abrí <b>Orígenes de datos</b> en la barra lateral y elegí tu conjunto de datos.</li>
+        <li>Entrá a la pestaña <b>Probar eventos</b>.</li>
+        <li>En <b>Probar eventos del navegador</b>, escribí la URL de tu sitio y hacé clic en <b>Abrir sitio web</b>.</li>
+        <li>Navegá como un cliente: entrá a una ficha, completá el formulario, tocá WhatsApp.</li>
+        <li>Volvé a la pestaña de Meta. Cada acción tiene que aparecer con su nombre. Si llega por navegador y por servidor, debería figurar como deduplicada.</li>
+        <li>Para probar la API, copiá el <b>código de prueba</b> que muestra la misma pestaña y cargalo en tu integración o pasáselo al desarrollador (parámetro <code>test_event_code</code>).</li>
+      </ol>
+      <p>Desactivá el bloqueador de anuncios mientras probás. También sirve la extensión <b>Meta Pixel Helper</b>, disponible para Chrome y Edge, que muestra qué eventos dispara cada página.</p>
+
+      <h2>¿Qué es la calidad de coincidencia de eventos y cómo subirla?</h2>
+      <p>La <b>calidad de coincidencia de eventos</b> (Event Match Quality) es una puntuación de 1 a 10 que indica qué tan bien la información de cliente que mandás permite asociar un evento con una cuenta de Facebook o Instagram. Solo los eventos que coinciden sirven para atribuir y optimizar. Meta recomienda apuntar a 6 o más. La ves en el resumen del conjunto de datos.</p>
+      <p>Para subirla:</p>
+      <ul>
+        <li>Activá la coincidencia avanzada automática.</li>
+        <li>Mandá por la API los datos que tengas: email, teléfono, nombre, IP y navegador, y un ID de cliente propio (<code>external_id</code>).</li>
+        <li>Pasá también las cookies <code>fbp</code> y <code>fbc</code> si tu integración lo permite.</li>
+        <li>Enviá los eventos en el momento, no en lotes días después.</li>
+      </ul>
+
+      <h2>¿Cuáles son los errores más comunes con el píxel de Meta?</h2>
+      <ul>
+        <li><b>Píxel instalado dos veces</b>: en el código y en un plugin, o en el tema y en GTM. Duplica todo.</li>
+        <li><b>Nombres distintos entre píxel y API</b>: rompen la deduplicación.</li>
+        <li><b>Conectar dos API a la vez</b>, como Tienda Nube y el Gateway. Ensucian los datos.</li>
+        <li><b>Optimizar a un evento sin volumen</b>: si tenés pocas ventas por semana, la campaña no aprende. Empezá por un paso anterior.</li>
+        <li><b>Contar como Lead un clic</b>: un clic en WhatsApp es intención (Contact), no un cliente potencial.</li>
+        <li><b>No volver a revisar</b>: un cambio de web o de plugin rompe la medición sin avisar.</li>
+      </ul>
+      <p>Si ya tenés todo instalado y los anuncios igual no traen ventas, el problema puede estar en otro lado. Lo repasamos en <a href="/blog/por-que-mis-anuncios-no-venden">por qué tus anuncios no venden</a>.</p>
+
+      <h2>¿Lo hago yo o lo delego?</h2>
+      <p>Con Tienda Nube o el plugin de WordPress, lo podés dejar andando en una tarde con esta guía. Con sitios a medida, varios formularios y CRM, conviene delegarlo. En Eureka, la auditoría y el setup de píxel, API de conversiones y eventos están incluidos en nuestro <a href="/servicios/anuncios">servicio de pauta digital</a>, y lo dejamos listo en el primer mes antes de escalar la inversión.</p>
+
+      <h2>Preguntas frecuentes</h2>
+      <div class="faq">
+        <details><summary>¿El píxel de Facebook y el píxel de Meta son lo mismo?</summary><p>Sí. Es la misma herramienta con otro nombre. Hoy, dentro del Administrador de eventos, Meta lo muestra como un conjunto de datos, que agrupa los eventos del píxel y los de la API de conversiones.</p></details>
+        <details><summary>¿Necesito la API de conversiones si ya tengo el píxel?</summary><p>Si invertís en anuncios con objetivo de ventas o de clientes potenciales, sí. El píxel depende del navegador y pierde eventos por bloqueadores y cookies. La API de conversiones los manda desde el servidor y completa lo que falta.</p></details>
+        <details><summary>¿Cuánto tarda en verse un evento en el Administrador de eventos?</summary><p>En la pestaña Probar eventos aparece casi en tiempo real. En el resumen general puede tardar más. Si no ves nada después de unos minutos, revisá bloqueadores de anuncios y que estés mirando el conjunto de datos correcto.</p></details>
+        <details><summary>¿Puedo tener el píxel instalado dos veces?</summary><p>No conviene. Si el mismo píxel está en el código del sitio y también en un plugin o en Google Tag Manager, cada evento se cuenta dos veces. Elegí un solo método por píxel y desactivá el resto.</p></details>
+      </div>
+
+      <p class="sources"><b>Fuentes:</b> <a href="https://developers.facebook.com/documentation/ads-commerce/conversions-api/deduplicate-pixel-and-server-events" target="_blank" rel="noopener">Meta for Developers, deduplicación de eventos del píxel y del servidor</a> (consultado el 18/11/2026) · <a href="https://developers.facebook.com/documentation/ads-commerce/conversions-api/best-practices" target="_blank" rel="noopener">Meta for Developers, buenas prácticas de la API de conversiones</a> (consultado el 18/11/2026) · <a href="https://developers.facebook.com/documentation/ads-commerce/conversions-api/verifying-setup" target="_blank" rel="noopener">Meta for Developers, verificar la configuración y calidad de coincidencia</a> (consultado el 18/11/2026) · <a href="https://about.fb.com/ltam/news/2026/04/eliminar-barreras-tecnicas-para-ayudar-a-empresas-de-todos-los-tamanos-a-aprovechar-mas-sus-anuncios/" target="_blank" rel="noopener">Meta, novedades del píxel y la API de conversiones</a> (abril de 2026) · <a href="https://ayuda.tiendanube.com/es_AR/pixel-de-facebook/como-activar-la-api-de-conversiones-de-facebook" target="_blank" rel="noopener">Tienda Nube, cómo activar la API de conversiones</a> y <a href="https://ayuda.tiendanube.com/es_AR/pixel-de-facebook/como-probar-los-eventos-del-pixel-de-facebook" target="_blank" rel="noopener">cómo probar los eventos del píxel</a> (consultados el 18/11/2026) · <a href="https://wordpress.org/plugins/official-facebook-pixel/" target="_blank" rel="noopener">WordPress.org, Meta pixel for WordPress</a> (versión 5.2.2, julio de 2026) · <a href="https://adsuploader.com/es/blog/how-to-set-up-meta-pixel" target="_blank" rel="noopener">AdsUploader, cómo configurar el píxel de Meta</a> (julio de 2026) y <a href="https://adsuploader.com/es/blog/meta-pixel-helper" target="_blank" rel="noopener">guía de Meta Pixel Helper</a> (noviembre de 2026).</p>
+
+    </article>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="in">
+    <div class="cta-block">
+      <div><h2>¿Tu píxel mide lo que tiene que medir?</h2><p>En 30 minutos revisamos tus redes y anuncios. Si no vemos oportunidad, también te lo decimos.</p></div>
+      <div class="hero-cta"><a class="btn btn-c btn-lg" href="https://calendar.app.google/4XZwhySeTVGDjJje6" target="_blank" rel="noopener">Agendá tu diagnóstico <span class="arr">→</span></a><a class="btn btn-g btn-lg" href="https://wa.me/5493415014376?text=Hola%20Eureka!%20Quiero%20el%20diagn%C3%B3stico%20gratis." target="_blank" rel="noopener">WhatsApp</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="in">
+    <div><span class="logo">eureka</span><p>Agencia de marketing en Rosario y Gran Rosario.<br>+54 341 501 4376 · contacto@eurekacrea.com.ar</p></div>
+    <nav aria-label="Pie"><a href="/servicios/anuncios">Anuncios</a><a href="/servicios/contenido">Contenido</a><a href="/servicios/diseno">Diseño</a><a href="/precios">Planes</a><a href="/casos">Casos</a><a href="/blog">Blog</a><a href="/herramientas/calculadora-meta-ads">Calculadora</a><a href="/#contacto">Contacto</a></nav>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/5493415014376?text=Hola%20Eureka!%20Quiero%20el%20diagn%C3%B3stico%20gratis." target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.6a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></a>
+<script src="../js/eureka.js"></script>
+</body>
+</html>
