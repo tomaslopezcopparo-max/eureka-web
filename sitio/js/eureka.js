@@ -3,7 +3,7 @@
   if(!("IntersectionObserver" in window))return;
   if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;
   const els=[...document.querySelectorAll("section > .in > .head, .duo, .team-t, .contact-l, #lead")];
-  document.querySelectorAll(".pains,.services,.cases,.acc,.work,.steps,.plans,.quotes,.faq,.incl,.rel").forEach(g=>
+  document.querySelectorAll(".pains,.svcs,.cases,.acc,.work,.steps,.plans,.quotes,.faq,.incl,.rel").forEach(g=>
     [...g.children].forEach((c,i)=>{c.style.setProperty("--d",(i*.09)+"s");els.push(c)}));
   const count=el=>{
     const to=parseFloat(el.dataset.count),pre=el.dataset.prefix||"",suf=el.dataset.suffix||"",t0=performance.now();
