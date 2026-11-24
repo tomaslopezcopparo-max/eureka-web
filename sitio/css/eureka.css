@@ -694,3 +694,20 @@ section.dark .lede{color:rgba(255,255,255,.72)}
 .mm-strip img{width:100%;height:auto;aspect-ratio:960/679;border-radius:var(--r-s);background:var(--blanco);box-shadow:0 1px 0 var(--linea)}
 .mm-strip figcaption{font-size:14px;color:var(--tinta-2)}
 .mm-strip figcaption b{font-weight:500;color:var(--tinta)}
+
+/* Abanico de piezas (hero diseño) */
+.fan-w{display:grid;justify-items:center;align-self:center;animation:pop 1s .2s cubic-bezier(.2,.75,.2,1) both}
+.fan{position:relative;width:min(100%,440px);aspect-ratio:1/1}
+.fan .set{position:absolute;inset:0}
+.fan img{position:absolute;top:50%;left:50%;width:52%;height:auto;border-radius:12px;box-shadow:0 18px 40px rgba(5,13,66,.28);opacity:0;transform:translate(-50%,-50%) translateY(8%) scale(.86);transition:transform .7s cubic-bezier(.2,.75,.2,1),opacity .5s ease}
+.fan .set.on img{opacity:1}
+.fan .set.on img:nth-child(1){transform:translate(-50%,-50%) translateX(-34%) rotate(-10deg) scale(.92)}
+.fan .set.on img:nth-child(2){transform:translate(-50%,-50%) translateX(34%) rotate(10deg) scale(.92);transition-delay:.06s}
+.fan .set.on img:nth-child(3){transform:translate(-50%,-50%) translateY(-2%);z-index:2;transition-delay:.12s}
+.fan:hover .set.on img:nth-child(1){transform:translate(-50%,-50%) translateX(-60%) rotate(-14deg) scale(.92)}
+.fan:hover .set.on img:nth-child(2){transform:translate(-50%,-50%) translateX(60%) rotate(14deg) scale(.92)}
+.fan:hover .set.on img:nth-child(3){transform:translate(-50%,-50%) translateY(-6%) scale(1.04)}
+.brands{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:8px}
+.brands button{font:inherit;font-size:13px;border:1px solid var(--linea);background:var(--blanco);color:var(--tinta-2);padding:7px 14px;border-radius:var(--pill);cursor:pointer;transition:background .25s,color .25s}
+.brands button[aria-pressed="true"]{background:var(--azul);border-color:var(--azul);color:#fff}
+@media (prefers-reduced-motion:reduce){.fan img{transition:none}}
