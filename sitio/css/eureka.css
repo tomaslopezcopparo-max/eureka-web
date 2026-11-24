@@ -660,3 +660,22 @@ section.dark .lede{color:rgba(255,255,255,.72)}
 .svc2-ink .more{color:#aef6ff}
 .svc2-ink .svc2-p{border-top-color:rgba(255,255,255,.22)}
 @media (max-width:900px){.svcs{grid-template-columns:minmax(0,1fr)}}
+/* Antes / después (diseño) */
+.ba{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(24px,4vw,56px);align-items:center;background:var(--blanco);border-radius:var(--r);padding:clamp(22px,3.5vw,48px)}
+@media (max-width:900px){.ba{grid-template-columns:minmax(0,1fr)}}
+.ba-t{display:grid;gap:18px;align-content:start}
+.ba-t ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.ba-t li{padding-left:22px;position:relative;color:var(--tinta-2);font-size:15px}
+.ba-t li::before{content:"";position:absolute;left:0;top:.6em;width:10px;height:2px;background:var(--azul)}
+.ba-sw{display:inline-flex;background:var(--fondo);border-radius:var(--pill);padding:4px;justify-self:start}
+.ba-sw button{font:inherit;font-size:14px;border:0;background:transparent;color:var(--tinta-2);padding:9px 20px;border-radius:var(--pill);cursor:pointer;transition:background .25s,color .25s}
+.ba-sw button[aria-pressed="true"]{background:var(--azul);color:#fff}
+.ba-g{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;border-radius:var(--r-s);overflow:hidden}
+.ba-c{position:relative;aspect-ratio:4/5;background:var(--fondo)}
+.ba-c img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .5s ease}
+.ba-c img.d{opacity:0}
+.ba[data-state="despues"] .ba-c img.d{opacity:1}
+.ba[data-state="despues"] .ba-c img.a{opacity:0}
+.ba-c:nth-child(2) img{transition-delay:.05s}.ba-c:nth-child(3) img{transition-delay:.1s}.ba-c:nth-child(4) img{transition-delay:.05s}.ba-c:nth-child(5) img{transition-delay:.1s}.ba-c:nth-child(6) img{transition-delay:.15s}.ba-c:nth-child(7) img{transition-delay:.1s}.ba-c:nth-child(8) img{transition-delay:.15s}.ba-c:nth-child(9) img{transition-delay:.2s}
+.ba-tag{position:absolute;top:10px;left:10px;z-index:2;background:rgba(21,23,29,.72);color:#fff;font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:var(--pill)}
+@media (prefers-reduced-motion:reduce){.ba-c img{transition:none}}

@@ -82,6 +82,33 @@
 
 <section style="padding-top:0">
   <div class="in">
+    <div class="ba" data-state="antes">
+      <div class="ba-t">
+        <span class="eyebrow">Caso · Tu Préstamo Genial</span>
+        <h2>El mismo feed, otra marca.</h2>
+        <p class="lede">Así se veía la cuenta antes de trabajar juntos y así se ve hoy, con un sistema visual propio.</p>
+        <ul>
+          <li>Una paleta propia en lugar de fondos distintos en cada placa.</li>
+          <li>Un recurso gráfico reconocible: el resaltado en verde.</li>
+          <li>Piezas por público (docentes, policía, enfermería) con la misma identidad.</li>
+          <li>La marca firma cada pieza, sin depender de fotos de stock.</li>
+        </ul>
+        <div class="ba-sw" role="group" aria-label="Comparar feed"><button type="button" aria-pressed="true" data-s="antes">Antes</button><button type="button" aria-pressed="false" data-s="despues">Después</button></div>
+      </div>
+      <div class="ba-g" role="img" aria-label="Grilla de Instagram de Tu Préstamo Genial, antes y después del rediseño"><span class="ba-tag" aria-hidden="true">Antes</span><div class="ba-c"><img class="a" src="/img/casos/tpg/antes-1.webp" alt="" loading="lazy" width="480" height="600"><img class="d" src="/img/casos/tpg/despues-1.webp" alt="" loading="lazy" width="480" height="600"></div><div class="ba-c"><img class="a" src="/img/casos/tpg/antes-2.webp" alt="" loading="lazy" width="480" height="600"><img class="d" src="/img/casos/tpg/despues-2.webp" alt="" loading="lazy" width="480" height="600"></div><div class="ba-c"><img class="a" src="/img/casos/tpg/antes-3.webp" alt="" loading="lazy" width="480" height="600"><img class="d" src="/img/casos/tpg/despues-3.webp" alt="" loading="lazy" width="480" height="600"></div><div class="ba-c"><img class="a" src="/img/casos/tpg/antes-4.webp" alt="" loading="lazy" width="480" height="600"><img class="d" src="/img/casos/tpg/despues-4.webp" alt="" loading="lazy" width="480" height="600"></div><div class="ba-c"><img class="a" src="/img/casos/tpg/antes-5.webp" alt="" loading="lazy" width="480" height="600"><img class="d" src="/img/casos/tpg/despues-5.webp" alt="" loading="lazy" width="480" height="600"></div><div class="ba-c"><img class="a" src="/img/casos/tpg/antes-6.webp" alt="" loading="lazy" width="480" height="600"><img class="d" src="/img/casos/tpg/despues-6.webp" alt="" loading="lazy" width="480" height="600"></div><div class="ba-c"><img class="a" src="/img/casos/tpg/antes-7.webp" alt="" loading="lazy" width="480" height="600"><img class="d" src="/img/casos/tpg/despues-7.webp" alt="" loading="lazy" width="480" height="600"></div><div class="ba-c"><img class="a" src="/img/casos/tpg/antes-8.webp" alt="" loading="lazy" width="480" height="600"><img class="d" src="/img/casos/tpg/despues-8.webp" alt="" loading="lazy" width="480" height="600"></div><div class="ba-c"><img class="a" src="/img/casos/tpg/antes-9.webp" alt="" loading="lazy" width="480" height="600"><img class="d" src="/img/casos/tpg/despues-9.webp" alt="" loading="lazy" width="480" height="600"></div></div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){var b=document.querySelector('.ba');if(!b)return;var t=b.querySelector('.ba-tag'),bs=b.querySelectorAll('.ba-sw button'),auto=true;
+function set(s){b.dataset.state=s;t.textContent=s==='antes'?'Antes':'Después';bs.forEach(function(x){x.setAttribute('aria-pressed',x.dataset.s===s)})}
+bs.forEach(function(x){x.addEventListener('click',function(){auto=false;set(x.dataset.s)})});
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver'in window){var o=new IntersectionObserver(function(e){if(e[0].isIntersecting){o.disconnect();setTimeout(function(){if(auto)set('despues')},1600)}},{threshold:.5});o.observe(b)}
+})();
+</script>
+
+<section style="padding-top:0">
+  <div class="in">
     <div class="head"><h2>Mes a mes.</h2></div>
     <ol class="steps">
       <li class="step"><h3><span class="when">Semana 1:</span> diagnóstico</h3><p>Revisamos cómo se ve hoy tu marca en cada canal.</p></li>
